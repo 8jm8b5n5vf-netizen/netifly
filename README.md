@@ -1,6 +1,6 @@
 # Código Penal 360
 
-Landing page em português brasileiro, com React, TypeScript, Vite, CSS e Lucide. O build padrão está **pronto para demonstração no Netlify**. O catálogo comercial depende da produção e revisão dos materiais, do cadastro do fornecedor e de validação ponta a ponta no Wiapy e na Meta.
+Landing page em português brasileiro, com React, TypeScript, Vite, CSS e Lucide. O build padrão está **pronto para demonstração no Cloudflare Pages**. O catálogo comercial depende da produção e revisão dos materiais, do cadastro do fornecedor e de validação ponta a ponta no Wiapy e na Meta.
 
 ## Executar e verificar
 
@@ -41,19 +41,18 @@ O PDF tem índice clicável e sete páginas de artigos, com fonte legal, exemplo
 
 Para regenerar os arquivos, instale `editorial/requirements.txt` em um ambiente virtual. Execute `python editorial/generate.py` na raiz. O gerador usa DejaVu Sans e DejaVu Serif. Em outros sistemas, a variável `CP360_FONT_DIR` aponta para os três arquivos TTF correspondentes.
 
-## Netlify
+## Cloudflare Pages
 
-1. Crie um repositório sob seu controle com este projeto e importe-o no Netlify. Escolha a raiz como diretório-base. O `netlify.toml` define Node 22, `npm run build` e `dist`.
-2. Para demonstração, mantenha `VITE_COMMERCIAL_APPROVED=false`. O HTML é marcado com `noindex, nofollow` e o build também gera `X-Robots-Tag`. Se for necessário restringir acesso, habilite o controle de acesso do Netlify.
-3. Configure as variáveis de build do site usando `.env.example` como referência. Os valores `VITE_*` são públicos no bundle e devem conter somente URLs e identificadores públicos.
-4. Faça o deploy da branch escolhida. Um ZIP separado de `dist/` também pode ser extraído e enviado pela área de deploy manual do Netlify para visualizar a demonstração.
-5. Confira o domínio HTTPS, cabeçalhos, downloads, experiência mobile e modo de oferta. Em produção comercial, confira canonical, dados de compartilhamento e `/sitemap.xml`.
-6. Para rollback, abra a lista de deploys do Netlify e republice a versão anterior que passou pelas verificações. Confirme se ela deve operar em demonstração ou modo comercial. Corrija as variáveis ou o commit e refaça o build quando necessário.
+1. Em **Workers & Pages**, crie um projeto **Pages** com **Import an existing Git repository** e selecione este repositório. Escolha como branch de produção a que contém a configuração do Cloudflare.
+2. Use o preset **Vite**, a raiz do repositório, o comando de build `npm run build` e o diretório de saída `dist`. Defina `NODE_VERSION=22` e `VITE_COMMERCIAL_APPROVED=false` nos ambientes de produção e preview.
+3. Use `.env.example` como referência para as demais variáveis. Os valores `VITE_*` entram no código público. O build gera `dist/_headers` com os cabeçalhos de segurança, o cache de assets e, em demonstração, `X-Robots-Tag: noindex, nofollow`.
+4. Confira no endereço HTTPS `pages.dev` a página inicial, o download das amostras, os cabeçalhos e o modo de oferta. Em produção comercial, confira também o endereço canônico e `/sitemap.xml`.
+5. Para rollback, selecione um deploy de produção anterior na lista de deploys do Pages e use **Rollback to this deployment**.
 
 ## Checkout e entrega Wiapy
 
 - Crie dois produtos ou checkouts com pagamento único, **Básico R$ 10,00** e **Premium R$ 27,00**. Vincule os endereços verificados em `VITE_CHECKOUT_BASIC_URL` e `VITE_CHECKOUT_PREMIUM_URL`. [Como criar e copiar o link de checkout](https://help.wiapy.com/pt-br/article/como-criar-um-checkout-e-pegar-o-link-de-venda-1omdaab/)
-- Na Área de Membros, cadastre o livro do Básico e o livro com os sete materiais do Premium. Em cada checkout, habilite a entrega e associe apenas as permissões correspondentes. O acesso após aprovação fica a cargo do Wiapy. O Netlify hospeda somente o PDF gratuito de amostras. [Liberação de acesso pelo checkout](https://help.wiapy.com/pt-br/article/liberar-acesso-da-compra-pela-area-de-membros-jb3yxe/)
+- Na Área de Membros, cadastre o livro do Básico e o livro com os sete materiais do Premium. Em cada checkout, habilite a entrega e associe apenas as permissões correspondentes. O acesso após aprovação fica a cargo do Wiapy. O Cloudflare Pages hospeda somente o PDF gratuito de amostras. [Liberação de acesso pelo checkout](https://help.wiapy.com/pt-br/article/liberar-acesso-da-compra-pela-area-de-membros-jb3yxe/)
 - Com autorização do responsável, valide os dois fluxos em ambiente de teste, se disponível. Confira o valor mostrado no checkout, aprovação, e-mail, login, navegação por celular e acesso a cada arquivo. Confira também que um comprador Básico não acessa os bônus. Vincule `VITE_ACCESS_URL` a uma página de orientação oficial.
 - Os UTMs e identificadores de campanha são encaminhados apenas quando a integração aceitar a atribuição, `VITE_FORWARD_ATTRIBUTION=true` e a pessoa autorizar a medição. O checkout mantém os parâmetros com que foi configurado. Dados como e-mail e telefone ficam fora da lista de encaminhamento.
 

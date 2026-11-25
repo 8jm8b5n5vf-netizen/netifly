@@ -4,6 +4,14 @@ import { createServer, defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { readConfig } from './src/config/site.ts'
 
+const securityHeaders = [
+  'X-Content-Type-Options: nosniff',
+  'X-Frame-Options: DENY',
+  'Referrer-Policy: strict-origin-when-cross-origin',
+  'Permissions-Policy: camera=(), microphone=(), geolocation=()',
+  "Content-Security-Policy: default-src 'self'; script-src 'self' https://connect.facebook.net; style-src 'self'; img-src 'self' data: https://www.facebook.com; font-src 'self'; connect-src 'self' https://www.facebook.com https://connect.facebook.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+]
+
 function htmlAttribute(text: string) {
   return text.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;')
 }
@@ -67,7 +75,13 @@ export default defineConfig(({ mode }) => {
             type: 'asset', fileName: 'sitemap.xml',
             source: '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>' + htmlAttribute(canonical) + '</loc></url></urlset>',
           })
-          if (!canonical) this.emitFile({ type: 'asset', fileName: '_headers', source: '/*\n  X-Robots-Tag: noindex, nofollow\n' })
+          const headers = [...securityHeaders]
+          if (!canonical) headers.push('X-Robots-Tag: noindex, nofollow')
+          this.emitFile({
+            type: 'asset', fileName: '_headers',
+            source: ['/*', ...headers.map(header => '  ' + header),
+              '/assets/*', '  Cache-Control: public, max-age=3600, stale-while-revalidate=86400', ''].join('\n'),
+          })
         },
       },
     ],
