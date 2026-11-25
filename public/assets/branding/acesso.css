@@ -1,0 +1,5 @@
+body { margin: 0; background: #f7f5ef; color: #111827; font: 1.07rem/1.65 system-ui, sans-serif; }
+main { max-width: 42rem; margin: 2rem auto; padding: clamp(1rem, 5vw, 3rem); background: #fff; border-top: 5px solid #b91c1c; }
+h1, h2 { line-height: 1.25; }
+a { color: #116143; font-weight: 650; }
+a:focus-visible { outline: 2px solid #b91c1c; outline-offset: 4px; }
