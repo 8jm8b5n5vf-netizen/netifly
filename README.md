@@ -35,7 +35,7 @@ npm test
 
 ## Identidade e material
 
-Azul-marinho `#111827`, vermelho `#B91C1C`, dourado `#F4C542` e verde `#00C853`. Sora e Inter são servidas pelo próprio site. As capas combinam tipografia serifada, linhas de contorno e símbolos desenhados, com matrizes em PNG e mockups em WebP. O ícone da marca e a imagem de compartilhamento também são autorais.
+Azul-marinho `#111827`, vermelho `#D3102E`, dourado `#FFD14B` e verde `#20DF68`. Sora e Inter são servidas pelo próprio site. As capas combinam tipografia serifada, linhas de contorno e símbolos desenhados, com matrizes em PNG e mockups em WebP. O ícone da marca e a imagem de compartilhamento também são autorais.
 
 O PDF tem índice clicável e sete páginas de artigos, com fonte legal, exemplos fictícios, alertas e exercícios. A edição indica a data da consulta jurídica. Os trechos foram conferidos em 25/11/2026 no Decreto-Lei nº 2.848/1940, versão compilada do Planalto. A cópia está identificada como demonstrativa e requer revisão especializada antes de uso comercial. [Código Penal compilado](https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm)
 

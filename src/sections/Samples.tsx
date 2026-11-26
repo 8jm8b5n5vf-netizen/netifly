@@ -55,10 +55,10 @@ export function Samples() {
       <div className="section-heading section-heading-row">
         <div>
           <p className="eyebrow"><span /> POR DENTRO DO MATERIAL</p>
-          <h2 id="samples-heading">Veja por dentro do<br className="desktop-break" /> Código Penal 360</h2>
-          <p>Explore amostras autorais com trechos da lei, exemplos e exercícios de fixação.</p>
+          <h2 id="samples-heading">Veja o Código Penal 360 por dentro</h2>
+          <p>Abra uma página e veja como o texto da lei vira explicação, exemplo e exercício.</p>
         </div>
-        <a className="text-link" href={demoPdf} download><ArrowDownToLine size={18} /> Baixar amostras em PDF</a>
+        <a className="button button-outline" href={demoPdf} download><ArrowDownToLine size={18} /> Baixar amostras em PDF</a>
       </div>
       <ul className="sample-track" ref={track} onScroll={scrollPosition} tabIndex={0} aria-label="Carrossel de amostras"
         onKeyDown={event => {

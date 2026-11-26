@@ -12,7 +12,7 @@ export function App() {
       <p className="utility"><span>ACESSO DIGITAL</span><i /><span>PAGAMENTO ÚNICO</span><i /><span>SEM MENSALIDADE</span></p>
       <div className="wrap navigation">
         <Brand />
-        <nav aria-label="Navegação principal"><a href="#amostras">Amostras</a><a href="#metodo">O método</a><a href="#faq">Dúvidas</a></nav>
+        <nav aria-label="Navegação principal"><a href="#amostras">Amostras</a><a href="#metodo">O método</a><a href="#materiais">Materiais</a><a href="#faq">Dúvidas</a></nav>
         <a className="nav-cta" href="#ofertas">Ver pacotes <ArrowRight size={15} /></a>
       </div>
     </header>

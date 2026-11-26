@@ -63,10 +63,10 @@ export function Offers({ consent }: { consent: string | null | undefined }) {
   const [demo, setDemo] = useState<Plan>()
   const active = offers.find(offer => offer.id === demo)
   return <section className="section offers dark" id="ofertas" aria-labelledby="offers-heading">
-    <div className="wrap">
-      <div className="section-heading centered">
+    <div className="wrap offers-layout">
+      <div className="section-heading">
         <p className="eyebrow"><span /> {site.live ? 'PLANOS DIGITAIS' : 'PLANOS EM DEMONSTRAÇÃO'}</p>
-        <h2 id="offers-heading">Escolha a melhor opção<br className="desktop-break" /> para seus estudos</h2>
+        <h2 id="offers-heading">Escolha seu pacote</h2>
         <p>{site.live ? 'Acesso digital com pagamento único.' : 'Compare os pacotes previstos. As vendas serão liberadas após a validação dos materiais e do checkout.'}</p>
       </div>
       <div className="offer-grid">
@@ -149,10 +149,13 @@ export function Faq() {
 
 export function FinalCall() {
   return <section className="section final-call" aria-labelledby="final-heading">
-    <div className="wrap centered"><h2 id="final-heading">Não deixe a linguagem jurídica<br className="desktop-break" /> dificultar sua preparação.</h2>
-      <p>Comece a estudar com explicações claras, recursos visuais e materiais organizados.</p>
-      <a className="button button-primary" href="#ofertas">Quero começar agora <ArrowRight size={20} /></a>
-      <p className="final-meta">{site.live ? 'A partir de R$ 10,00' : 'Pacotes previstos a partir de R$ 10,00'} · Pagamento único</p>
+    <div className="wrap final-grid">
+      <div><h2 id="final-heading">Comece pelo próximo artigo.</h2>
+        <p>Leia a explicação, veja o exemplo e teste o que aprendeu.</p></div>
+      <div className="final-actions">
+        <a className="button button-primary" href={site.live ? '#ofertas' : '#amostras'}>{site.live ? 'Quero começar agora' : 'Ver amostras grátis'} <ArrowRight size={20} /></a>
+        <p className="final-meta">{site.live ? 'A partir de R$ 10,00 · Pagamento único' : 'Amostras em PDF · Sem cadastro'}</p>
+      </div>
     </div>
   </section>
 }

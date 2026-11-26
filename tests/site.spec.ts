@@ -43,6 +43,13 @@ for (const width of widths) {
     await page.goto(host)
     await expect(page.getByRole('heading', { level: 1 })).toContainText('sem entender')
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width)
+    const heroCopy = (await page.locator('.hero-copy').boundingBox())!
+    const heroImage = (await page.locator('.hero-figure').boundingBox())!
+    if (width >= 800) {
+      expect(heroImage.x).toBeGreaterThanOrEqual(heroCopy.x + heroCopy.width)
+    } else {
+      expect(heroImage.y).toBeGreaterThanOrEqual(heroCopy.y + heroCopy.height)
+    }
     await expect(page.locator('#ofertas article').first()).toContainText('Pacote Premium')
     const assets = await page.locator('img').evaluateAll(async images => {
       return Promise.all(images.map(async element => {
