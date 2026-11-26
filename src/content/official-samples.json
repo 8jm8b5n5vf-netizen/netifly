@@ -1,0 +1,52 @@
+[
+  {
+    "id": 155,
+    "title": "Furto",
+    "image": "03-artigo-155-furto"
+  },
+  {
+    "id": 157,
+    "title": "Roubo",
+    "image": "04-artigo-157-roubo"
+  },
+  {
+    "id": 171,
+    "title": "Estelionato",
+    "image": "05-artigo-171-estelionato"
+  },
+  {
+    "id": 121,
+    "title": "Homicídio",
+    "image": "06-artigo-121-homicidio"
+  },
+  {
+    "id": 312,
+    "title": "Peculato",
+    "image": "07-artigo-312-peculato"
+  },
+  {
+    "id": 18,
+    "title": "Dolo e culpa",
+    "image": "08-artigo-18-dolo-culpa"
+  },
+  {
+    "id": 23,
+    "title": "Exclusão de ilicitude",
+    "image": "09-artigo-23-exclusao-ilicitude"
+  },
+  {
+    "id": 14,
+    "title": "Consumação e tentativa",
+    "image": "10-artigo-14-tentativa"
+  },
+  {
+    "id": 129,
+    "title": "Lesão corporal",
+    "image": "11-artigo-129-lesao-corporal"
+  },
+  {
+    "id": 180,
+    "title": "Receptação",
+    "image": "12-artigo-180-receptacao"
+  }
+]

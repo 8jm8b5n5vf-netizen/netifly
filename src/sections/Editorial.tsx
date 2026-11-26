@@ -1,157 +1,71 @@
-import { ArrowDown, ArrowDownToLine, ArrowRight, BookOpen, Brain, CalendarDays, Check, CircleCheck, FileText, Gavel, GraduationCap, Highlighter, Layers3, LayoutGrid, ListChecks, Map, NotebookPen, ShieldCheck } from 'lucide-react'
-import { bonuses, demoPdf, legalSource } from '../config/catalog'
-import samples from '../content/samples.json'
+import { ArrowDown, ArrowRight, BookOpen, CircleCheck, FileText, GraduationCap, ListChecks } from 'lucide-react'
+import { asset, images } from '../config/catalog'
+import { site } from './Commerce'
 
-const pains = [
-  'Entender o que cada artigo diz em português simples.',
-  'Distinguir conceitos que costumam ser confundidos nas provas.',
-  'Praticar com questões que explicam o raciocínio da resposta.',
-  'Revisar com esquemas visuais e aproveitar melhor o tempo de estudo.',
-]
-
-const method = [
-  [BookOpen, 'Leia', 'Comece pelo trecho da lei.'],
-  [Highlighter, 'Entenda', 'Traduza o juridiquês em ideias claras.'],
-  [Map, 'Visualize', 'Conecte conceitos com esquemas e exemplos.'],
-  [NotebookPen, 'Pratique', 'Resolva exercícios e confira o raciocínio.'],
-  [Brain, 'Memorize', 'Recupere os conceitos com revisão ativa.'],
+const audiences = [
+  [GraduationCap, 'Estudantes de Direito', 'Acompanhe a matéria da faculdade com exemplos dos artigos.'],
+  [ListChecks, 'Concurseiros', 'Identifique as diferenças entre conceitos que aparecem nas questões.'],
+  [BookOpen, 'Quem precisa revisar', 'Retome os pontos centrais com esquemas e exemplos práticos.'],
 ] as const
 
-const bonusIcons = [Map, NotebookPen, Brain, Gavel, ListChecks, GraduationCap, CalendarDays]
-
-const heroSizes = '(min-width: 1360px) 620px, (min-width: 800px) 48vw, (min-width: 640px) 520px, 90vw'
-const heroSet = (extension: 'avif' | 'webp') =>
-  '/assets/hero/kit-small.' + extension + ' 650w, /assets/hero/kit-medium.' + extension + ' 850w, /assets/hero/kit.' + extension + ' 1300w'
-
-export function Hero({ live }: { live: boolean }) {
+export function Hero() {
+  const bundle = site.fullBundle
+  const image = bundle ? images.hero : images.guide
   return <section className="hero" aria-labelledby="hero-heading">
     <div className="wrap hero-grid">
-      <div className="hero-copy">
-        <p className="eyebrow"><span /> DIREITO PENAL EM LINGUAGEM SIMPLES</p>
-        <h1 id="hero-heading">Cansou de ler o Código Penal e ficar <em>sem entender?</em></h1>
-        <p className="hero-intro">Estude artigo por artigo com explicações em português simples, exemplos práticos e esquemas que ajudam na revisão.</p>
-        <div className="hero-actions">
-          <a className="button button-primary" href="#ofertas">Quero entender o Código Penal <ArrowRight size={20} /></a>
-          <a className="text-link hero-samples" href="#amostras">Ver amostras grátis <ArrowDown size={17} /></a>
-        </div>
-        <p className="hero-meta"><ShieldCheck size={17} aria-hidden="true" /> {live ? 'Acesso digital · Pagamento único · Garantia de 7 dias' : 'Demonstração gratuita · Sem cadastro'}</p>
-      </div>
-      <figure className="hero-figure">
-        <picture>
-          <source type="image/avif" srcSet={heroSet('avif')} sizes={heroSizes} />
-          <img src="/assets/hero/kit.webp" srcSet={heroSet('webp')} sizes={heroSizes}
-            width="1300" height="1230" fetchPriority="high" alt="Mockup autoral do Código Penal 360 com livro, páginas demonstrativas e cadernos do kit de estudo" />
-        </picture>
-        <figcaption><span /> {live ? 'Edição digital' : 'Composição demonstrativa da edição digital'}</figcaption>
-      </figure>
+      <h1 id="hero-heading">Entenda o Código Penal de forma <em>simples e visual</em></h1>
+      <p className="hero-intro">Estude os artigos com explicações em linguagem simples, exemplos e esquemas que ajudam a comparar conceitos e revisar a matéria.</p>
+      <img className="hero-art" src={asset(image + '-720')} srcSet={asset(image + '-720') + ' 720w, ' + asset(image) + ' 1440w'}
+        sizes="(min-width: 720px) 390px, (min-width: 485px) 445px, calc(100vw - 40px)" width="720" height="720" fetchPriority="high"
+        alt={bundle ? 'Guia Código Penal 360, amostras dos artigos e os sete materiais do kit' : 'Capa bordô do guia Código Penal 360 com três páginas ilustradas ao fundo'} />
+      <a className="button button-primary hero-cta" href="#ofertas">QUERO VER AS OFERTAS <ArrowDown size={19} aria-hidden="true" /></a>
+      <p className="hero-meta"><FileText size={16} aria-hidden="true" /> Material de acesso digital</p>
     </div>
   </section>
 }
 
 export function Benefits() {
   return <section className="benefits dark" aria-labelledby="benefits-heading">
-    <div className="wrap benefits-grid">
-      <div><p className="eyebrow"><span /> CONCURSOS E FACULDADE</p><h2 id="benefits-heading">Estude com mais clareza</h2></div>
-      <ul>{pains.map(pain => <li key={pain}><CircleCheck size={21} /><span>{pain}</span></li>)}</ul>
-    </div>
-  </section>
-}
-
-export function Comparison() {
-  const furto = samples.find(article => article.id === 155)!
-  return <section className="section comparison" aria-labelledby="comparison-heading">
     <div className="wrap">
+      <h2 id="benefits-heading">Para quem é o Código Penal 360?</h2>
+      <ul>{audiences.map(([Icon, title, description]) => <li key={title}>
+        <Icon size={22} aria-hidden="true" />
+        <div><strong>{title}</strong><p>{description}</p></div>
+      </li>)}</ul>
+    </div>
+  </section>
+}
+
+export function MainProduct() {
+  return <section className="section main-product" id="materiais" aria-labelledby="product-heading">
+    <div className="wrap product-grid">
       <div className="section-heading">
-        <p className="eyebrow"><span /> A LEI NA PRÁTICA</p>
-        <h2 id="comparison-heading">O mesmo artigo. <em>Outra leitura.</em></h2>
-        <p>Compare o trecho do art. 155 com a explicação usada no material.</p>
+        <h2 id="product-heading">Tudo o que você vai receber</h2>
+        <p>{site.live ? 'O guia digital em PDF reúne trechos da lei, explicações em português simples, exemplos e esquemas visuais.' : 'Veja o formato do guia digital em PDF nas amostras. Cada página combina trechos da lei, explicações, exemplos e esquemas visuais.'}</p>
+        <ul className="checklist" id="metodo">{['Distinguir furto de roubo pelas circunstâncias da conduta.', 'Comparar dolo e culpa com exemplos práticos.', 'Identificar quando a execução iniciada configura tentativa.'].map(item =>
+          <li key={item}><CircleCheck size={20} aria-hidden="true" /><span>{item}</span></li>)}</ul>
+        <a className="text-link" href="#amostras">Explorar as amostras <ArrowRight size={18} aria-hidden="true" /></a>
       </div>
-      <div className="comparison-grid">
-        <article className="comparison-card before">
-          <p className="card-kicker"><FileText size={18} /> ANTES</p>
-          <h3>Somente o texto legal</h3>
-          <p className="article-label">ART. 155 · FURTO</p>
-          <blockquote>“{furto.law}”</blockquote>
-          <a className="subtle-link" href={legalSource}>Consultar o Código Penal no Planalto <ArrowRight size={14} /></a>
-        </article>
-        <article className="comparison-card after">
-          <p className="card-kicker"><Layers3 size={18} /> DEPOIS</p>
-          <h3>Texto legal com contexto</h3>
-          <blockquote>“{furto.law}”</blockquote>
-          <p>{furto.plain}</p>
-          <ol className="flow">{furto.steps.map(step => <li key={step}>{step}</li>)}</ol>
-          <div className="example"><strong>Exemplo didático</strong><p>{furto.example}</p></div>
-        </article>
+      <div className="product-art">
+        <img src={asset(images.guide + '-720')} width="720" height="720" loading="lazy" alt="Guia digital Código Penal 360 com exemplos de páginas internas" />
       </div>
     </div>
   </section>
 }
 
-export function Method() {
-  return <section className="section method" id="metodo" aria-labelledby="method-heading">
-    <div className="wrap">
-      <div className="section-heading">
-        <p className="eyebrow"><span /> DA LEITURA À REVISÃO</p>
-        <h2 id="method-heading">Método Lei em 5 Camadas</h2>
-        <p>Cinco etapas para passar do texto legal à revisão ativa.</p>
-      </div>
-      <ol className="method-list">{method.map(([Icon, title, description], index) =>
-        <li key={title}>
-          <div className="method-icon"><Icon size={28} /><span>{index + 1}</span></div>
-          <h3>{title}</h3><p>{description}</p>
-        </li>)}</ol>
-    </div>
-  </section>
-}
-
-export function MainProduct({ live }: { live: boolean }) {
-  return <>
-    <section className="section main-product dark" id="materiais" aria-labelledby="product-heading">
-      <div className="wrap product-grid">
-        <div className="product-art"><img src="/assets/mockups/livro.webp" width="780" height="760" loading="lazy" alt="Mockup da capa do livro principal Código Penal 360" /></div>
-        <div className="section-heading">
-          <p className="eyebrow"><span /> MATERIAL PRINCIPAL</p>
-          <h2 id="product-heading">Da leitura da lei à revisão para a prova</h2>
-          <p>{live ? 'O livro reúne texto legal, explicações e navegação por assunto.' : 'Amostras do formato editorial planejado para o livro principal.'}</p>
-          <ul className="checklist">{['Dispositivos legais vigentes e referências de consulta', 'Explicações claras e conceitos importantes em destaque', 'Exemplos didáticos e esquemas visuais', 'Índice clicável e navegação por assunto', 'Data de atualização identificada'].map(item => <li key={item}><Check size={17} /><span>{item}</span></li>)}</ul>
-          <a className="text-link dark-link" href="#amostras">Ver as páginas demonstrativas <ArrowRight size={18} /></a>
-        </div>
-      </div>
-    </section>
-    <section className="section proof" aria-labelledby="proof-heading">
-      <div className="wrap proof-grid">
-        <div className="section-heading">
-          <p className="eyebrow"><span /> AMOSTRA GRATUITA</p>
-          <h2 id="proof-heading">Experimente uma sessão de estudo</h2>
-          <p>Abra o PDF, escolha um artigo no índice e tente responder ao exercício antes de conferir o comentário.</p>
-          <a href={demoPdf} download className="button button-outline"><ArrowDownToLine size={18} /> Baixar amostras em PDF</a>
-        </div>
-        <ul className="proof-list">
-          <li><BookOpen size={21} /><div><strong>Trechos legais com fonte</strong><p>Confira o dispositivo e a data da consulta.</p></div></li>
-          <li><LayoutGrid size={21} /><div><strong>Diagramas vetoriais</strong><p>Siga as relações entre os conceitos na página.</p></div></li>
-          <li><NotebookPen size={21} /><div><strong>Exercícios com resposta explicada</strong><p>Compare o seu raciocínio com o comentário.</p></div></li>
-        </ul>
-      </div>
-    </section>
-  </>
-}
-
-export function Bonuses({ live }: { live: boolean }) {
+export function Bonuses() {
+  if (!site.confirmedBonuses.length) return null
   return <section className="section bonus-section" aria-labelledby="bonuses-heading">
     <div className="wrap">
       <div className="section-heading">
-        <p className="eyebrow"><span /> KIT PREMIUM {live ? '' : '· CATÁLOGO PREVISTO'}</p>
-        <h2 id="bonuses-heading">Materiais para praticar e revisar</h2>
-        <p>Sete formatos complementares para diferentes momentos do estudo.</p>
+        <h2 id="bonuses-heading">Bônus do Pacote Premium</h2>
+        <p>Escolha o material de acordo com o que precisa praticar ou revisar.</p>
       </div>
-      <div className="bonus-grid">{bonuses.map((bonus, index) => {
-        const Icon = bonusIcons[index]
-        return <article className={'bonus-card bonus-' + bonus.id} key={bonus.id}>
-          <div className="bonus-art"><img src={'/assets/mockups/' + bonus.id + '.webp'} width="480" height="380" alt={'Capa de ' + bonus.title} loading="lazy" /></div>
-          <div className="bonus-copy"><h3><Icon size={19} aria-hidden="true" /> {bonus.title}</h3><p>{bonus.info}</p></div>
-        </article>
-      })}</div>
-      <a className="button button-primary" href="#ofertas">Comparar os pacotes <ArrowDown size={19} /></a>
+      <div className="bonus-grid">{site.confirmedBonuses.map(bonus =>
+        <article className="bonus-card" key={bonus.id}>
+          <div className="bonus-art"><img src={asset('bonus/' + bonus.image)} width="1440" height="1440" alt="" loading="lazy" /></div>
+          <div className="bonus-copy"><h3>{bonus.title}</h3><p>{bonus.info}</p></div>
+        </article>)}</div>
     </div>
   </section>
 }

@@ -35,11 +35,9 @@ npm test
 
 ## Identidade e material
 
-Azul-marinho `#111827`, vermelho `#D3102E`, dourado `#FFD14B` e verde `#20DF68`. Sora e Inter são servidas pelo próprio site. As capas combinam tipografia serifada, linhas de contorno e símbolos desenhados, com matrizes em PNG e mockups em WebP. O ícone da marca e a imagem de compartilhamento também são autorais.
+A paleta usa marfim, azul-marinho `#101D32`, vermelho `#C8102E`, bordô `#850D16` e dourado `#FFC928`. Sora e Inter são servidas localmente. Os WebP oficiais estão em `public/assets/oficiais/`. As dez amostras são imagens do ZIP. O PDF complementar, mantido na rota anterior, é uma edição separada com sete artigos e requer revisão especializada.
 
-O PDF tem índice clicável e sete páginas de artigos, com fonte legal, exemplos fictícios, alertas e exercícios. A edição indica a data da consulta jurídica. Os trechos foram conferidos em 25/11/2026 no Decreto-Lei nº 2.848/1940, versão compilada do Planalto. A cópia está identificada como demonstrativa e requer revisão especializada antes de uso comercial. [Código Penal compilado](https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm)
-
-Para regenerar os arquivos, instale `editorial/requirements.txt` em um ambiente virtual. Execute `python editorial/generate.py` na raiz. O gerador usa DejaVu Sans e DejaVu Serif. Em outros sistemas, a variável `CP360_FONT_DIR` aponta para os três arquivos TTF correspondentes.
+Para regenerar o PDF anterior, instale `editorial/requirements.txt` em um ambiente virtual e execute `python editorial/generate.py` na raiz. O gerador usa DejaVu Sans e DejaVu Serif.
 
 ## Cloudflare Pages
 
@@ -49,12 +47,14 @@ Para regenerar os arquivos, instale `editorial/requirements.txt` em um ambiente 
 4. Confira no endereço HTTPS `pages.dev` a página inicial, o download das amostras, os cabeçalhos e o modo de oferta. Em produção comercial, confira também o endereço canônico e `/sitemap.xml`.
 5. Para rollback, selecione um deploy de produção anterior na lista de deploys do Pages e use **Rollback to this deployment**.
 
-## Checkout e entrega Wiapy
+## Checkout, preços e conteúdo
 
-- Crie dois produtos ou checkouts com pagamento único, **Básico R$ 10,00** e **Premium R$ 27,00**. Vincule os endereços verificados em `VITE_CHECKOUT_BASIC_URL` e `VITE_CHECKOUT_PREMIUM_URL`. [Como criar e copiar o link de checkout](https://help.wiapy.com/pt-br/article/como-criar-um-checkout-e-pegar-o-link-de-venda-1omdaab/)
-- Na Área de Membros, cadastre o livro do Básico e o livro com os sete materiais do Premium. Em cada checkout, habilite a entrega e associe apenas as permissões correspondentes. O acesso após aprovação fica a cargo do Wiapy. O Cloudflare Pages hospeda somente o PDF gratuito de amostras. [Liberação de acesso pelo checkout](https://help.wiapy.com/pt-br/article/liberar-acesso-da-compra-pela-area-de-membros-jb3yxe/)
-- Com autorização do responsável, valide os dois fluxos em ambiente de teste, se disponível. Confira o valor mostrado no checkout, aprovação, e-mail, login, navegação por celular e acesso a cada arquivo. Confira também que um comprador Básico não acessa os bônus. Vincule `VITE_ACCESS_URL` a uma página de orientação oficial.
-- Os UTMs e identificadores de campanha são encaminhados apenas quando a integração aceitar a atribuição, `VITE_FORWARD_ATTRIBUTION=true` e a pessoa autorizar a medição. O checkout mantém os parâmetros com que foi configurado. Dados como e-mail e telefone ficam fora da lista de encaminhamento.
+- Edite os preços de Básico, Premium e oferta alternativa em `src/config/catalog.ts`. O Básico recupera o valor anterior de R$ 10,00. Use `null` se o preço de um pacote estiver pendente.
+- Preencha os links individuais `VITE_CHECKOUT_BASIC_URL`, `VITE_CHECKOUT_PREMIUM_URL` e `VITE_CHECKOUT_DOWNSELL_URL` conforme `.env.example`. Confirme no Wiapy qual produto, valor e permissão de acesso cada link concede.
+- Liste em `VITE_CONFIRMED_BONUSES` apenas IDs com entrega e quantidades conferidas. Verifique os itens impressos nas capas, incluindo 100 mapas, 300 questões, 200 flashcards, 60 pegadinhas e três simulados de 120 questões no total. O hero e o card Premium exibem a imagem do guia até os sete bônus serem confirmados.
+- A oferta alternativa de R$ 17,00 exige confirmação própria, link distinto e o kit completo. Abra pelo botão nas ofertas. O modal é exibido uma vez por sessão.
+- Cadastre depoimentos reais em `src/config/catalog.ts` com a identificação autorizada e `authorized: true` somente quando houver autorização de publicação.
+- Confirme pagamento único, entrega digital após confirmação do pagamento e garantia de sete dias antes de ativar suas respectivas chaves. As quatro artes para o checkout e suas dimensões estão em [assets-checkout](assets-checkout/README.md).
 
 ## Meta Pixel
 
@@ -65,13 +65,10 @@ Para regenerar os arquivos, instale `editorial/requirements.txt` em um ambiente 
 
 ## Pendências comerciais
 
-- Produzir o livro completo e os sete materiais Premium. Obter revisão jurídica especializada, documentar o conteúdo e publicar somente os volumes efetivamente revisados. As quantidades do briefing são metas de produção e estão fora das ofertas atuais.
-- Confirmar as duas URLs do Wiapy, permissões e entrega após aprovação, incluindo a página de orientação oficial.
-- Preencher razão social ou nome do fornecedor, identificação, endereço e suporte oficial. Disponibilizar os documentos finais de privacidade, termos e reembolso.
-- Definir domínio HTTPS e data da edição comercial (`VITE_EDITION_UPDATED` em AAAA-MM-DD), verificar a integração do Pixel no ambiente real quando utilizada e confirmar os critérios de impressão, acesso e atualização editorial descritos na página.
-- Só então definir `VITE_COMMERCIAL_APPROVED=true` e reconstruir. Mesmo com a chave ativa, o build mantém a demonstração se o domínio, os checkouts distintos, dados do fornecedor ou URLs legais estiverem incompletos ou a data válida da edição estiver ausente.
-
-As avaliações têm um componente preparado em `src/sections/Commerce.tsx`. Cadastre somente avaliações verificadas com autorização para publicação.
+- Concluir e revisar juridicamente o guia e os bônus, incluindo as quantidades dos materiais anunciados.
+- Verificar URLs, valores, permissões, prazos, garantia, dimensão da arte e entrega no Wiapy.
+- Preencher os dados do fornecedor, URLs legais, domínio e data da edição. Use a configuração `VITE_COMMERCIAL_APPROVED=false` até a aprovação comercial.
+- Publicar a revisão em uma branch de preview do Cloudflare Pages, distinta da branch de produção `cloudflare-pages`.
 
 ## Referências comerciais consultadas
 

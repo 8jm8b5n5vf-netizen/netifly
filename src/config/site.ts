@@ -1,3 +1,5 @@
+import { bonuses } from './catalog.ts'
+
 type BuildVariables = Partial<Record<string, string>>
 
 export function httpsUrl(value?: string) {
@@ -22,7 +24,14 @@ export function readConfig(env: BuildVariables) {
   const checkout = {
     basic: httpsUrl(env.VITE_CHECKOUT_BASIC_URL),
     premium: httpsUrl(env.VITE_CHECKOUT_PREMIUM_URL),
+    downsell: httpsUrl(env.VITE_CHECKOUT_DOWNSELL_URL),
   }
+  const approvedBonuses = new Set(env.VITE_CONFIRMED_BONUSES?.split(',').map(id => id.trim()))
+  const confirmedBonuses = bonuses.filter(bonus => approvedBonuses.has(bonus.id))
+  const fullBundle = confirmedBonuses.length === bonuses.length
+  const payment = env.VITE_PAYMENT_TERMS_CONFIRMED === 'true'
+  const delivery = env.VITE_DIGITAL_DELIVERY_CONFIRMED === 'true'
+  const guarantee = env.VITE_GUARANTEE_7_DAYS_CONFIRMED === 'true'
   const supplier = {
     name: env.VITE_SUPPLIER_NAME?.trim(),
     id: env.VITE_SUPPLIER_ID?.trim(),
@@ -37,10 +46,14 @@ export function readConfig(env: BuildVariables) {
   }
   const updated = editionDate(env.VITE_EDITION_UPDATED)
   const approved = env.VITE_COMMERCIAL_APPROVED === 'true'
-  const live = Boolean(approved && updated && url && checkout.basic && checkout.premium && checkout.basic !== checkout.premium
+  const live = Boolean(approved && delivery && updated && url && checkout.basic && checkout.premium && checkout.basic !== checkout.premium
     && Object.values(supplier).every(Boolean) && Object.values(legal).every(Boolean))
+  const downsellReady = live && fullBundle && env.VITE_DOWNSELL_CONFIRMED === 'true' && checkout.downsell
+    && checkout.downsell !== checkout.basic && checkout.downsell !== checkout.premium
   return {
-    url, checkout, supplier, legal, updated, live,
+    url, checkout, supplier, legal, updated, live, fullBundle, confirmedBonuses,
+    terms: { payment, delivery, guarantee },
+    downsellUrl: downsellReady ? checkout.downsell : undefined,
     pixel: /^\d{5,25}$/.test(env.VITE_META_PIXEL_ID ?? '') ? env.VITE_META_PIXEL_ID : undefined,
     forwardAttribution: env.VITE_FORWARD_ATTRIBUTION === 'true',
   }

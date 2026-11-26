@@ -1,6 +1,6 @@
-import { ArrowRight, Check, CircleHelp, LockKeyhole, Plus, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Check, CircleHelp, Plus, ShieldCheck } from 'lucide-react'
 import { useEffect, useState, useSyncExternalStore } from 'react'
-import { offers, sampleDate, type Plan } from '../config/catalog'
+import { asset, downsell, images, offers, price, testimonials } from '../config/catalog'
 import { readConfig } from '../config/site'
 import { Brand } from '../components/Brand'
 import { Dialog } from '../components/Dialog'
@@ -8,9 +8,7 @@ import { checkoutTarget } from '../utils/checkout'
 import { permitMeta, revokeMeta } from '../utils/pixel'
 
 export const site = readConfig(import.meta.env)
-const format = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 })
 const privacyKey = 'cp360-consent-v1'
-const testimonials: { quote: string; author: string; authorization: true }[] = []
 
 type Consent = 'yes' | 'no'
 let tabConsent: Consent | null = null
@@ -59,62 +57,114 @@ export function useConsent() {
   return { consent, updateConsent }
 }
 
+function CheckoutLink({ url, consent, label, primary = true }: {
+  url: string
+  consent: string | null | undefined
+  label: string
+  primary?: boolean
+}) {
+  const forward = Boolean(site.pixel && site.forwardAttribution && consent === 'yes')
+  return <a className={'button ' + (primary ? 'button-primary' : 'button-outline')}
+    href={checkoutTarget(url, forward ? window.location.search : '', forward)}>
+    {label} <ArrowRight size={18} aria-hidden="true" />
+  </a>
+}
+
+const downsellSessionKey = 'cp360-downsell-seen'
+
+function Downsell({ url, consent }: { url: string; consent: string | null | undefined }) {
+  const [state, setState] = useState<'ready' | 'open' | 'seen'>('ready')
+
+  function open(trigger: HTMLButtonElement) {
+    if (state !== 'ready') return
+    try {
+      if (window.sessionStorage.getItem(downsellSessionKey)) {
+        setState('seen')
+        return
+      }
+      window.sessionStorage.setItem(downsellSessionKey, 'true')
+    } catch {
+      setState('seen')
+      return
+    }
+    trigger.focus({ preventScroll: true })
+    setState('open')
+  }
+
+  return <div className="downsell">
+    <button className="button button-outline" type="button" aria-disabled={state === 'seen'}
+      onClick={event => open(event.currentTarget)}>{state === 'seen' ? 'Oferta alternativa já exibida' : 'Ver oferta alternativa'}</button>
+    {state === 'open' && <Dialog title={downsell.title} className="downsell-dialog" onClose={() => setState('seen')}>
+      <img src={asset(images.downsell)} width="1200" height="1200" alt="Guia Código Penal 360 e os sete materiais complementares" />
+      <p className="price">{price.format(downsell.amount)}</p>
+      <CheckoutLink url={url} consent={consent} label="Quero a oferta alternativa" />
+    </Dialog>}
+  </div>
+}
+
 export function Offers({ consent }: { consent: string | null | undefined }) {
-  const [demo, setDemo] = useState<Plan>()
-  const active = offers.find(offer => offer.id === demo)
   return <section className="section offers dark" id="ofertas" aria-labelledby="offers-heading">
-    <div className="wrap offers-layout">
+    <div className="wrap">
       <div className="section-heading">
-        <p className="eyebrow"><span /> {site.live ? 'PLANOS DIGITAIS' : 'PLANOS EM DEMONSTRAÇÃO'}</p>
         <h2 id="offers-heading">Escolha seu pacote</h2>
-        <p>{site.live ? 'Acesso digital com pagamento único.' : 'Compare os pacotes previstos. As vendas serão liberadas após a validação dos materiais e do checkout.'}</p>
+        {site.live && site.terms.payment && <p>Pagamento único.</p>}
+        {!site.live && <p>Prévia das ofertas. As compras estão desativadas.</p>}
       </div>
       <div className="offer-grid">
         {offers.map(offer => {
           const premium = offer.id === 'premium'
           const url = site.checkout[offer.id]
-          const label = premium ? 'Quero o pacote Premium' : 'Quero o pacote Básico'
-          return <article className={'offer-card ' + (premium ? 'premium' : 'basic')} key={offer.id}>
-            {premium && <p className="recommendation">RECOMENDADO</p>}
+          const amount = offer.amount !== null && offer.amount > 0 ? offer.amount : undefined
+          const enabled = site.live && url && amount !== undefined && (!premium || site.confirmedBonuses.length > 0)
+          const label = premium ? 'Quero o Pacote Premium' : 'Quero o Pacote Básico'
+          const offerImage = premium ? (site.fullBundle ? images.premium : images.guide) : images.basic
+          const included = premium ? site.confirmedBonuses : []
+          return <article className={'offer-card ' + offer.id} key={offer.id}>
             <h3>{offer.title}</h3>
-            <p className="offer-intro">{offer.intro}</p>
-            <p className="price"><span>R$</span> {format.format(offer.amount)}</p>
-            <ul className="offer-list">{offer.includes.map(item => <li key={item}><Check size={17} /> {item}</li>)}</ul>
-            {site.live && url
-              ? <a className={'button ' + (premium ? 'button-primary' : 'button-outline')} href={checkoutTarget(url, consent === 'yes' ? window.location.search : '', Boolean(site.pixel && site.forwardAttribution && consent === 'yes'))}>{label} <ArrowRight size={18} /></a>
-              : <button type="button" className={'button ' + (premium ? 'button-primary' : 'button-outline')} onClick={() => setDemo(offer.id)}>{label} <ArrowRight size={18} /></button>}
-            <p className="offer-meta"><LockKeyhole size={13} /> Pagamento único. Sem mensalidade.</p>
+            <img className="offer-art" src={asset(offerImage)} width="1440" height="1440" alt="" loading="lazy" />
+            <ul className="offer-list">
+              <li><Check size={17} aria-hidden="true" /> Guia digital Código Penal 360</li>
+              {included.map(bonus => <li key={bonus.id}><Check size={17} aria-hidden="true" /> {bonus.title}</li>)}
+            </ul>
+            <p className="price">{amount === undefined ? 'Preço a confirmar' : price.format(amount)}</p>
+            {enabled
+              ? <CheckoutLink url={url} consent={consent} label={label} primary={premium} />
+              : <button className="button button-outline" type="button" disabled>{label}</button>}
+            {!enabled && <p className="offer-meta">
+              {!url ? 'Checkout ainda sem link configurado.' : amount === undefined ? 'Preço pendente.' : 'Liberação comercial pendente.'}
+              {premium && !included.length && ' Bônus em confirmação.'}
+            </p>}
           </article>
         })}
       </div>
+      {site.downsellUrl && <Downsell url={site.downsellUrl} consent={consent} />}
     </div>
-    {active && <Dialog title={active.title} className="offer-dialog" onClose={() => setDemo(undefined)}>
-      <div className="offer-dialog-body">
-        <p className="eyebrow"><span /> MODO DE DEMONSTRAÇÃO</p>
-        <p className="price"><span>R$</span> {format.format(active.amount)}</p>
-        <p>As vendas serão liberadas após a revisão dos materiais, a configuração do checkout Wiapy e a validação da entrega digital.</p>
-        <a href="#amostras" className="button button-primary" onClick={() => setDemo(undefined)}>Ver amostras gratuitas <ArrowRight size={17} /></a>
-      </div>
-    </Dialog>}
   </section>
 }
 
 export function Testimonials() {
-  if (!testimonials.length) return null
-  return <section className="section" aria-labelledby="reviews-heading">
-    <div className="wrap"><h2 id="reviews-heading">Avaliações de estudantes</h2>
-      {testimonials.filter(item => item.authorization).map(item => <figure key={item.author + item.quote}><blockquote>{item.quote}</blockquote><figcaption>{item.author}</figcaption></figure>)}
+  const approved = testimonials.filter(item => item.authorized && item.quote.trim() && item.author.trim())
+  if (!approved.length) return null
+  return <section className="section testimonials" aria-labelledby="reviews-heading">
+    <div className="wrap">
+      <div className="section-heading"><h2 id="reviews-heading">Avaliações de estudantes</h2></div>
+      <ul className="testimonial-track" tabIndex={approved.length > 1 ? 0 : undefined} aria-label="Depoimentos publicados com autorização">
+        {approved.map(item => <li key={item.author + item.quote}><figure>
+          <blockquote>{item.quote}</blockquote><figcaption>{item.author}</figcaption>
+        </figure></li>)}
+      </ul>
     </div>
   </section>
 }
 
 export function Guarantee() {
+  if (!site.live || !site.terms.guarantee) return null
   return <section className="guarantee" aria-labelledby="guarantee-heading">
     <div className="wrap guarantee-box">
-      <div className="guarantee-icon"><ShieldCheck size={45} /></div>
+      <div className="guarantee-icon"><ShieldCheck size={32} aria-hidden="true" /></div>
       <div><h2 id="guarantee-heading">Garantia de 7 dias</h2>
-        <p>{site.live ? 'Você poderá conhecer o material e, caso ele não atenda às suas expectativas, solicitar o reembolso dentro do prazo de sete dias, conforme as condições informadas no checkout e a legislação aplicável.' : 'Quando as vendas forem liberadas, você poderá solicitar o reembolso dentro do prazo de sete dias, conforme as condições informadas no checkout e a legislação aplicável.'}</p>
-        {site.legal.refund && site.live && <a className="subtle-link" href={site.legal.refund}>Política de reembolso <ArrowRight size={14} /></a>}
+        <p>Você pode solicitar o reembolso dentro de sete dias, conforme as condições do checkout.</p>
+        {site.legal.refund && <a className="text-link" href={site.legal.refund}>Política de reembolso <ArrowRight size={14} aria-hidden="true" /></a>}
       </div>
     </div>
   </section>
@@ -122,24 +172,20 @@ export function Guarantee() {
 
 export function Faq() {
   const list = [
-    ['Como receberei o material?', site.live ? 'Após a confirmação do pagamento, siga o e-mail de acesso enviado pela plataforma.' : 'A entrega por e-mail após a confirmação do pagamento é o fluxo previsto. Nesta versão, as amostras estão disponíveis para baixar diretamente.'],
-    ['O material é físico ou digital?', 'O material é digital, em PDF.'],
-    ['Posso estudar pelo celular?', 'Sim. Abra o PDF em um leitor do seu celular e use o índice para navegar entre os artigos.'],
-    ['Posso imprimir os PDFs?', site.live ? 'Os PDFs são preparados em A4 para leitura e impressão de uso pessoal, de acordo com os termos do material.' : 'Sim. O PDF de amostras tem formato A4 e pode ser impresso para uso pessoal.'],
-    ['O material serve para concursos públicos?', 'Foi pensado como apoio aos estudos de Direito Penal para concursos, inclusive carreiras policiais. Use o edital para delimitar os temas da sua prova.'],
-    ['Posso utilizar como apoio na faculdade?', 'Sim. As explicações e os exercícios ajudam a revisar os conceitos abordados nas disciplinas de Direito Penal.'],
-    ['Qual a diferença entre os pacotes?', 'O Básico inclui o livro digital. O Premium reúne o livro e materiais de prática e revisão, conforme o catálogo exibido acima.'],
-    ['Qual é a data de atualização do conteúdo?', site.live ? 'A edição comercial indica atualização em ' + site.updated + '.' : 'O texto legal das amostras foi consultado em ' + sampleDate + '. A data da edição integral será indicada no próprio material.'],
-    ['Existe mensalidade?', 'Os dois pacotes têm pagamento único.'],
-    ['Como funciona a garantia?', site.live ? 'Solicite o reembolso em até sete dias, conforme as condições do checkout e a legislação aplicável.' : 'Quando as vendas forem liberadas, o checkout informará o canal para solicitar o reembolso dentro do prazo de sete dias.'],
+    ['Qual é o formato do material?', 'O guia tem formato digital, em PDF.'],
+    ['Como receberei o material?', site.live && site.terms.delivery
+      ? 'O acesso digital é liberado após a confirmação do pagamento. Siga as instruções do checkout.'
+      : 'A forma de acesso será informada quando o checkout estiver validado. As amostras já podem ser abertas nesta página.'],
+    ['Posso estudar pelo celular?', 'Sim. Você pode abrir o PDF em um leitor compatível com seu celular.'],
+    ['Qual a diferença entre os pacotes?', site.confirmedBonuses.length
+      ? 'O Básico inclui o guia digital. O Premium também inclui os bônus listados no card da oferta.'
+      : 'O Básico é composto pelo guia digital. Os materiais adicionais do Premium ainda estão em confirmação.'],
+    ['O material serve para concursos públicos?', 'Sim, como apoio aos estudos. Consulte o edital para saber quais temas revisar.'],
   ]
+  if (site.live && site.terms.guarantee) list.push(['Como funciona a garantia?', 'Solicite o reembolso em até sete dias pelo canal indicado no checkout.'])
   return <section id="faq" className="section faq" aria-labelledby="faq-heading">
-    <div className="wrap faq-grid">
-      <div className="section-heading">
-        <p className="eyebrow"><span /> PERGUNTAS FREQUENTES</p>
-        <h2 id="faq-heading">Tire suas dúvidas</h2>
-        <p>Formato, acesso, pacotes e condições de compra.</p>
-      </div>
+    <div className="wrap">
+      <div className="section-heading"><h2 id="faq-heading">Perguntas frequentes</h2></div>
       <div className="faq-list">{list.map(([question, answer]) => <details key={question}>
         <summary>{question}<Plus size={19} aria-hidden="true" /></summary><p>{answer}</p>
       </details>)}</div>
@@ -149,13 +195,10 @@ export function Faq() {
 
 export function FinalCall() {
   return <section className="section final-call" aria-labelledby="final-heading">
-    <div className="wrap final-grid">
-      <div><h2 id="final-heading">Comece pelo próximo artigo.</h2>
-        <p>Leia a explicação, veja o exemplo e teste o que aprendeu.</p></div>
-      <div className="final-actions">
-        <a className="button button-primary" href={site.live ? '#ofertas' : '#amostras'}>{site.live ? 'Quero começar agora' : 'Ver amostras grátis'} <ArrowRight size={20} /></a>
-        <p className="final-meta">{site.live ? 'A partir de R$ 10,00 · Pagamento único' : 'Amostras em PDF · Sem cadastro'}</p>
-      </div>
+    <div className="wrap">
+      <h2 id="final-heading">Comece pelo próximo artigo.</h2>
+      <p>Encontre o pacote que faz sentido para sua rotina de estudos.</p>
+      <a className="button button-primary" href="#ofertas">Comparar os pacotes <ArrowRight size={19} aria-hidden="true" /></a>
     </div>
   </section>
 }

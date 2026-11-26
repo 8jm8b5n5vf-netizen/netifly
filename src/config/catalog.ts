@@ -1,20 +1,32 @@
-export const legalSource = 'https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm'
-export const sampleDate = '25/11/2026'
 export const demoPdf = '/previews/codigo-penal-360-amostras.pdf'
 
+export const images = {
+  hero: 'hero/01-kit-completo-hero',
+  guide: 'produto-principal/02-codigo-penal-360',
+  premium: 'ofertas/20-pacote-premium',
+  basic: 'ofertas/21-pacote-basico',
+  downsell: 'popup/22-mockup-downsell',
+}
+
+export const asset = (path: string) => '/assets/oficiais/' + path + '.webp'
+
 export const bonuses = [
-  { id: 'mapas', title: 'Mapas Mentais Ilustrados', info: 'Conecte os principais conceitos do Direito Penal em esquemas fáceis de revisar.' },
-  { id: 'questoes', title: 'Questões Comentadas', info: 'Pratique com exercícios autorais e acompanhe o raciocínio de cada resposta.' },
-  { id: 'flashcards', title: 'Flashcards Jurídicos', info: 'Recupere os conceitos de memória com perguntas diretas e respostas objetivas.' },
-  { id: 'guia', title: 'Guia de Penas e Crimes', info: 'Localize dispositivos, penas e particularidades em tabelas organizadas.' },
-  { id: 'pegadinhas', title: 'Pegadinhas de Direito Penal', info: 'Identifique distinções e erros de interpretação recorrentes nas provas.' },
-  { id: 'simulados', title: 'Simulados Completos', info: 'Treine com uma sequência de questões, gabarito comentado e ficha de desempenho.' },
-  { id: 'plano', title: 'Plano de Estudos', info: 'Organize leituras, exercícios e revisões em um roteiro de estudo.' },
+  { id: 'mapas', image: '13-bonus-mapas-mentais', title: 'Mapas mentais ilustrados', info: 'Revise os elementos de cada conceito com um esquema visual.' },
+  { id: 'questoes', image: '14-bonus-questoes', title: 'Questões comentadas', info: 'Confira o raciocínio por trás de cada resposta.' },
+  { id: 'flashcards', image: '15-bonus-flashcards', title: 'Flashcards jurídicos', info: 'Responda de memória e confira o verso para praticar recuperação ativa.' },
+  { id: 'guia', image: '16-bonus-penas-crimes', title: 'Guia de penas e crimes', info: 'Consulte o tema que precisa revisar e compare os dispositivos cobertos.' },
+  { id: 'pegadinhas', image: '17-bonus-pegadinhas', title: 'Pegadinhas de Direito Penal', info: 'Identifique as distinções que podem mudar a resposta de uma questão.' },
+  { id: 'simulados', image: '18-bonus-simulados', title: 'Simulados', info: 'Treine a resolução e identifique quais assuntos precisa revisar.' },
+  { id: 'plano', image: '19-bonus-plano-estudos', title: 'Plano de estudos de 30 dias', info: 'Distribua leitura, exercícios e revisão ao longo de 30 dias.' },
 ] as const
 
-export const offers = [
-  { id: 'premium', title: 'Pacote Premium', amount: 27, intro: 'Leitura, prática e revisão no mesmo kit.', includes: ['Código Penal explicado', 'Exemplos didáticos e esquemas visuais', ...bonuses.map(bonus => bonus.title)] },
-  { id: 'basic', title: 'Pacote Básico', amount: 10, intro: 'O essencial para entender a lei.', includes: ['Código Penal explicado', 'Exemplos didáticos', 'Ilustrações e esquemas', 'PDF digital', 'Índice clicável'] },
-] as const
+export const offers: readonly { id: 'premium' | 'basic'; title: string; amount: number | null }[] = [
+  { id: 'premium', title: 'Pacote Premium', amount: 27 },
+  { id: 'basic', title: 'Pacote Básico', amount: 10 },
+]
 
-export type Plan = (typeof offers)[number]['id']
+export const downsell = { amount: 17, title: 'Oferta alternativa' }
+
+export const testimonials: { quote: string; author: string; authorized: boolean }[] = []
+
+export const price = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
