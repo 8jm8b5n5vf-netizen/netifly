@@ -106,7 +106,9 @@ export function Offers({ consent }: { consent: string | null | undefined }) {
   return <section className="section offers dark" id="ofertas" aria-labelledby="offers-heading">
     <div className="wrap">
       <div className="section-heading">
-        <h2 id="offers-heading">Escolha seu pacote</h2>
+        <h2 id="offers-heading">Escolha como quer estudar Direito Penal</h2>
+        <p>Leia o artigo, veja um exemplo concreto e compare conceitos que costumam gerar dúvida.</p>
+        <a className="offer-sample-link" href="#amostras">Veja furto e roubo nas amostras gratuitas <ArrowRight size={17} aria-hidden="true" /></a>
         {site.live && site.terms.payment && <p>Pagamento único.</p>}
         {!site.live && <p>Prévia das ofertas. As compras estão desativadas.</p>}
       </div>
@@ -119,20 +121,26 @@ export function Offers({ consent }: { consent: string | null | undefined }) {
           const label = premium ? 'Quero o Pacote Premium' : 'Quero o Pacote Básico'
           const offerImage = premium ? (site.fullBundle ? images.premium : images.guide) : images.basic
           const included = premium ? site.confirmedBonuses : []
+          const description = premium
+            ? included.length
+              ? 'Para quem quer estudar pelo guia e complementar a revisão com os materiais abaixo.'
+              : 'Para quem quer combinar a leitura do guia com materiais de prática e revisão. Os bônus estão em confirmação.'
+            : 'Para quem quer ler os artigos em linguagem simples e consultar exemplos na hora da dúvida.'
           return <article className={'offer-card ' + offer.id} key={offer.id}>
             <h3>{offer.title}</h3>
+            <p className="offer-description">{description}</p>
             <img className="offer-art" src={asset(offerImage)} width="1440" height="1440" alt="" loading="lazy" />
+            <p className="price">{amount === undefined ? 'Preço a confirmar' : price.format(amount)}</p>
             <ul className="offer-list">
               <li><Check size={17} aria-hidden="true" /> Guia digital Código Penal 360</li>
-              {included.map(bonus => <li key={bonus.id}><Check size={17} aria-hidden="true" /> {bonus.title}</li>)}
+              <li><Check size={17} aria-hidden="true" /> Trechos da lei com explicações, exemplos e esquemas</li>
+              {included.map(bonus => <li key={bonus.id}><Check size={17} aria-hidden="true" /><div>{bonus.title}<p>{bonus.info}</p></div></li>)}
             </ul>
-            <p className="price">{amount === undefined ? 'Preço a confirmar' : price.format(amount)}</p>
             {enabled
               ? <CheckoutLink url={url} consent={consent} label={label} primary={premium} />
               : <button className="button button-outline" type="button" disabled>{label}</button>}
             {!enabled && <p className="offer-meta">
               {!url ? 'Checkout ainda sem link configurado.' : amount === undefined ? 'Preço pendente.' : 'Liberação comercial pendente.'}
-              {premium && !included.length && ' Bônus em confirmação.'}
             </p>}
           </article>
         })}
