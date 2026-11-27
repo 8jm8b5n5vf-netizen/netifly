@@ -6,7 +6,12 @@ export default async function setup() {
   process.env.VITE_CONFIRMED_BONUSES = ''
   process.env.VITE_CHECKOUT_BASIC_URL = ''
   process.env.VITE_CHECKOUT_PREMIUM_URL = ''
+  process.env.VITE_EDITORIAL_REVIEW = 'false'
   await build({ logLevel: 'warn' })
+
+  process.env.VITE_EDITORIAL_REVIEW = 'true'
+  await build({ logLevel: 'warn', build: { outDir: 'test-results/editorial' } })
+  process.env.VITE_EDITORIAL_REVIEW = 'false'
 
   // Reserved test domains are intercepted in the browser. No transaction occurs.
   Object.assign(process.env, {

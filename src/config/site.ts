@@ -52,6 +52,7 @@ export function readConfig(env: BuildVariables) {
     && checkout.downsell !== checkout.basic && checkout.downsell !== checkout.premium
   return {
     url, checkout, supplier, legal, updated, live, fullBundle, confirmedBonuses,
+    editorialReview: !approved && env.VITE_EDITORIAL_REVIEW === 'true',
     terms: { payment, delivery, guarantee },
     downsellUrl: downsellReady ? checkout.downsell : undefined,
     pixel: /^\d{5,25}$/.test(env.VITE_META_PIXEL_ID ?? '') ? env.VITE_META_PIXEL_ID : undefined,

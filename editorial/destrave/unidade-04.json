@@ -1,0 +1,36 @@
+{
+  "title": "Exclusão de ilicitude",
+  "pages": [
+    {
+      "title": "01 • Leia a lei",
+      "blocks": [
+        ["Objetivo", "Localizar os requisitos da justificante no enunciado e separar a conduta necessária de eventual excesso."],
+        ["Hipóteses • art. 23", "O Código menciona estado de necessidade, legítima defesa, estrito cumprimento de dever legal e exercício regular de direito. Nos quatro casos, o agente responde pelo excesso doloso ou culposo, conforme o parágrafo único."],
+        ["Estado de necessidade • art. 24", "Examine perigo atual, não provocado voluntariamente pelo agente e inevitável por outro meio. A ação protege direito próprio ou alheio cujo sacrifício não seria razoável exigir."],
+        ["Legítima defesa • art. 25", "A pessoa repele agressão injusta, atual ou iminente, a direito próprio ou de terceiro, usando moderadamente os meios necessários."],
+        ["Roteiro de leitura", "Identifique agressão ou perigo, o direito protegido e a medida adotada. Compare o tempo e os limites da reação com os requisitos legais."]
+      ]
+    },
+    {
+      "title": "02 • Aplique ao caso",
+      "blocks": [
+        ["Caso A • Perigo atual", "Durante uma inundação repentina, alguém abre à força uma porta para retirar uma pessoa em perigo. O enunciado estabelece que não havia alternativa imediata e que a primeira pessoa não causou o risco. Examine estado de necessidade."],
+        ["Caso B • Agressão atual", "Uma pessoa afasta o agressor para interromper um ataque em curso contra terceiro e cessa a intervenção assim que ele para. Examine legítima defesa de terceiro e verifique necessidade e moderação."],
+        ["Quando há excesso", "No caso B, imagine que a pessoa prossiga contra o agressor depois de cessada a agressão e já não haja risco iminente. A continuação deve ser examinada separadamente à luz do art. 23, parágrafo único."],
+        ["Dever legal e direito regular", "Verifique a norma que impõe o dever ou permite a conduta e os limites dessa autorização. O cargo exercido ou a invocação genérica de um direito não bastam para demonstrar a justificante."],
+        ["Limite do estado de necessidade", "Segundo o art. 24, § 1º, não pode alegá-lo quem tinha o dever legal de enfrentar o perigo. Localize esse dado no enunciado antes de concluir."]
+      ]
+    },
+    {
+      "title": "03 • Pratique e revise",
+      "blocks": [
+        ["Questão 1", "Uma pessoa usa moderadamente o meio necessário para afastar agressão injusta em curso contra um terceiro. Qual justificante corresponde aos fatos?"],
+        ["Questão 2", "Para salvar alguém de perigo atual não provocado por sua vontade e sem outra forma de o evitar, uma pessoa causa dano material necessário ao resgate. Qual justificante deve ser examinada?"],
+        ["Questão 3", "Encerrada a agressão, a pessoa inicialmente agredida continua a agredir, sem risco atual ou iminente. O que deve ser analisado?"],
+        ["Gabarito comentado", "1. Legítima defesa de terceiro, art. 25. A lei permite proteger direito de outrem.\n2. Estado de necessidade, art. 24. Compare o bem salvo com o sacrifício exigível.\n3. Eventual excesso doloso ou culposo, art. 23, parágrafo único. A justificante não abrange automaticamente a conduta posterior."],
+        ["Revisão de 1 minuto", "Compare os requisitos de agressão atual ou iminente e de perigo atual. Depois explique o papel da necessidade e da moderação."],
+        ["Fonte oficial", "Código Penal, Decreto-Lei nº 2.848/1940, arts. 23 a 25. Exemplos hipotéticos para estudo."]
+      ]
+    }
+  ]
+}

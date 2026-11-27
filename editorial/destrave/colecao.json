@@ -1,0 +1,30 @@
+{
+  "modulos": [
+    {
+      "id": "01-teoria-do-crime",
+      "title": "Teoria do crime",
+      "description": "Identifique o momento da execução, diferencie dolo de culpa e aplique os requisitos das excludentes.",
+      "files": ["unidade-02", "unidade-03", "unidade-04"]
+    },
+    {
+      "id": "02-crimes-contra-o-patrimonio",
+      "title": "Crimes contra o patrimônio",
+      "description": "Compare furto e roubo, reconheça o papel da fraude no estelionato e analise a origem do bem na receptação.",
+      "files": ["unidade-01", "unidade-05", "unidade-06"]
+    },
+    {
+      "id": "03-pessoa-e-administracao-publica",
+      "title": "Pessoa e administração pública",
+      "description": "Estude os recortes de homicídio, lesão corporal e peculato, com atenção aos fatos que alteram o enquadramento.",
+      "files": ["unidade-08", "unidade-09", "unidade-07"]
+    }
+  ],
+  "bonus": [
+    {"id":"bonus-mapas","title":"Mapas mentais","description":"Siga 10 esquemas de decisão para revisar os artigos."},
+    {"id":"bonus-questoes","title":"Questões comentadas","description":"Resolva 15 questões autorais e confira os fundamentos."},
+    {"id":"bonus-flashcards","title":"Flashcards jurídicos","description":"Use 30 pares de pergunta e resposta para treinar recuperação ativa."},
+    {"id":"bonus-guia","title":"Guia de penas e crimes","description":"Consulte os recortes de penas, aumentos e reduções estudados."},
+    {"id":"bonus-pegadinhas","title":"Pegadinhas de Direito Penal","description":"Treine 15 distinções que podem mudar o enquadramento."},
+    {"id":"bonus-plano","title":"Plano de estudos de 30 dias","description":"Alterne leitura, prática e revisão em um roteiro de 30 dias."}
+  ]
+}

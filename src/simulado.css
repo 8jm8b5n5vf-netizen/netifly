@@ -1,0 +1,46 @@
+.simulado-header { background: #fff; }
+.simulado-nav { display: flex; gap: 12px; align-items: center; justify-content: space-between; min-height: 64px; }
+.simulado-nav .brand { gap: 5px; }
+.simulado-return { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--burgundy); font-size: .88rem; font-weight: 720; }
+.simulado-return:hover { text-decoration: underline; }
+.simulado-hero { background: var(--navy); color: #fff; padding: clamp(32px, 7vw, 64px) 0; border-bottom: 4px solid var(--gold); }
+.simulado-hero h1 { font-size: clamp(1.9rem, 6vw, 3.5rem); line-height: 1.1; margin-block: 8px 10px; }
+.simulado-hero p:first-child { color: var(--gold); font-weight: 760; font-size: .76rem; letter-spacing: .09em; }
+.simulado-hero p:last-child { color: #dce5f4; }
+.simulado-main { display: grid; align-items: start; gap: 16px; margin-top: clamp(19px, 4vw, 36px); }
+.simulado-card { min-width: 0; padding: clamp(17px, 4vw, 30px); background: #fff; border: 1px solid #e3ded7; border-radius: 12px; }
+.simulado-card h2 { font-size: clamp(1.28rem, 3vw, 1.64rem); text-wrap: initial; margin-bottom: 7px; }
+.simulado-painel { background: #fbf3e9; }
+.simulado-nome { color: var(--burgundy); font-weight: 700; overflow-wrap: anywhere; }
+.simulado-painel progress { width: 100%; display: block; margin: 12px 0 5px; accent-color: #087849; }
+.simulado-painel dl { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 12px 0; }
+.simulado-painel dl div { background: #fff; border: 1px solid #e3ded7; border-radius: 6px; padding: 8px 10px; }
+.simulado-painel dt { color: var(--ink); font-size: .82rem; }
+.simulado-painel dd { margin: 0; font-size: 1.12rem; font-weight: 750; }
+.simulado-nota { color: var(--ink); font-size: .86rem; margin-top: 8px; }
+.simulado-identificacao { display: grid; gap: 8px; margin-top: 20px; max-width: 360px; }
+.simulado-identificacao label { font-weight: 730; }
+.simulado-identificacao input { min-width: 0; height: 46px; font: inherit; color: var(--heading); padding: 8px 11px; border: 1px solid #8a94a3; border-radius: 7px; }
+.simulado-identificacao button { width: fit-content; margin-top: 5px; }
+.simulado-etapa { color: var(--burgundy); font-size: .76rem; letter-spacing: .08em; font-weight: 760; margin-bottom: 6px; }
+.simulado-enunciado { margin-top: 11px; }
+.simulado-opcoes { display: grid; gap: 8px; min-inline-size: 0; border: 0; padding: 0; margin: 16px 0; }
+.simulado-opcoes label { display: flex; align-items: start; gap: 10px; padding: 11px 12px; border: 1px solid #cbd2dc; border-radius: 8px; line-height: 1.48; }
+.simulado-opcoes label:has(input:checked) { border-color: #087849; }
+.simulado-opcoes:not(:disabled) label { cursor: pointer; }
+.simulado-opcoes:not(:disabled) label:hover { background: #f5faf6; }
+.simulado-opcoes .simulado-correta { background: #eaf8ef; border-color: #087849; }
+.simulado-opcoes .simulado-incorreta { background: #fff1f3; border-color: var(--burgundy); }
+.simulado-opcoes input { flex: none; width: 17px; height: 17px; margin: 3px 0 0; accent-color: #087849; }
+.simulado-comentario { padding: 14px; margin-bottom: 14px; background: #eff2f7; border-left: 3px solid var(--navy); border-radius: 7px; }
+.simulado-comentario h3 { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; font-size: 1rem; }
+.simulado-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 17px; }
+.simulado-resultado { color: var(--burgundy); font-size: 1.25rem; font-weight: 740; margin-bottom: 8px; }
+.simulado-erros { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 10px; }
+.simulado-erros button { min-height: 38px; border: 1px solid #cbd2dc; border-radius: 6px; background: #f7f8fa; padding-inline: 9px; text-decoration: underline; text-underline-offset: 3px; }
+.simulado-footer { margin-block: 14px 24px; }
+.simulado-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+@media (min-width: 760px) {
+  .simulado-main { grid-template-columns: minmax(190px, .33fr) 1fr; gap: 20px; }
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Peculato",
+  "pages": [
+    {
+      "title": "01 • Leia a lei",
+      "blocks": [
+        ["Objetivo", "Distinguir apropriação, desvio e subtração praticados nas circunstâncias do art. 312. Ao final, você deve conseguir explicar como o cargo se relaciona com a posse do bem ou com a facilidade de subtraí-lo."],
+        ["Peculato • art. 312, caput", "Apropriar-se o funcionário público de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo, ou desviá-lo, em proveito próprio ou alheio."],
+        ["Posse e destino", "Na apropriação, a pessoa passa a agir como dona de um bem que tinha sob sua posse funcional. No desvio, dá ao bem destino indevido em proveito próprio ou de outra pessoa. O bem pode pertencer a particular."],
+        ["Subtração • art. 312, § 1º", "A posse anterior não é exigida nessa figura. O funcionário subtrai ou ajuda a subtrair o bem em proveito próprio ou alheio, valendo-se da facilidade proporcionada por sua qualidade de funcionário."],
+        ["Funcionário público • art. 327", "Para efeitos penais, considere quem exerce cargo, emprego ou função pública, ainda que transitoriamente ou sem remuneração. Leia também as hipóteses de equiparação do § 1º."]
+      ]
+    },
+    {
+      "title": "02 • Aplique ao caso",
+      "blocks": [
+        ["Caso A • Apropriação", "Uma servidora recebe um tablet para guarda em razão do cargo. Em vez de devolvê-lo, vende o aparelho e fica com o valor. O dado decisivo é a posse funcional anterior seguida de apropriação."],
+        ["Caso B • Desvio", "Um servidor administra verbas públicas em razão do cargo. Ele destina parte delas, sem base legal, a pagar dívida particular de um conhecido. Examine o desvio em proveito de terceiro."],
+        ["Caso C • Subtração", "Uma servidora sem a posse dos equipamentos usa o acesso a uma sala que sua função lhe proporciona e retira um aparelho para si. Examine o § 1º. Identifique a facilidade funcional efetivamente usada."],
+        ["Peculato culposo • art. 312, §§ 2º e 3º", "Examine se o funcionário concorreu culposamente para crime de outra pessoa. Apenas nessa modalidade, a reparação anterior à sentença irrecorrível extingue a punibilidade. Se posterior, reduz de metade a pena imposta."],
+        ["O que muda entre os casos?", "Nos casos A e B, a posse decorre do cargo. No caso C, a pessoa não tinha a posse e empregou a facilidade funcional para a subtração. Descreva esse vínculo antes de indicar a modalidade."]
+      ]
+    },
+    {
+      "title": "03 • Pratique e revise",
+      "blocks": [
+        ["Questão 1", "Uma servidora tem a guarda de dinheiro em razão do cargo e o transfere indevidamente para quitar dívida de um amigo. Que modalidade do caput aparece e quem se beneficia?"],
+        ["Questão 2", "Um funcionário sem a posse de uma câmera usa credencial concedida por sua função para entrar no depósito e retirá-la para si. Qual dispositivo deve ser examinado?"],
+        ["Questão 3", "Um funcionário contribui culposamente para o crime de outra pessoa e repara integralmente o dano antes da sentença irrecorrível. Qual efeito o art. 312 prevê para esse recorte?"],
+        ["Gabarito comentado", "1. Desvio. O dinheiro sob posse funcional vai para fim indevido em proveito do amigo.\n2. Art. 312, § 1º. A credencial mostra a facilidade funcional usada na subtração.\n3. Extinção da punibilidade no peculato culposo. Se a reparação viesse depois da sentença irrecorrível, a pena imposta seria reduzida de metade."],
+        ["Revisão de 1 minuto", "Pergunte se havia posse em razão do cargo. Depois diga se ocorreu apropriação, desvio, subtração com facilidade funcional ou colaboração culposa."],
+        ["Fonte oficial", "Código Penal, Decreto-Lei nº 2.848/1940, arts. 312 e 327. Recorte introdutório com exemplos hipotéticos."]
+      ]
+    }
+  ]
+}

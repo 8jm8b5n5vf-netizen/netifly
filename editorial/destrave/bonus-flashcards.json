@@ -1,0 +1,154 @@
+{
+  "title": "Flashcards do Código Penal",
+  "pages": [
+    {
+      "title": "Execução e desistência",
+      "blocks": [
+        [
+          "Como praticar",
+          "Cubra as respostas. Diga a sua em voz alta, confira e marque os cartões que precisam voltar amanhã."
+        ],
+        [
+          "01 • Quando o crime se considera consumado?",
+          "Quando reúne todos os elementos da definição legal. Art. 14, I."
+        ],
+        [
+          "02 • Quais dois fatos precisam aparecer juntos numa tentativa?",
+          "Execução iniciada e falta de consumação por circunstância alheia à vontade. Art. 14, II."
+        ],
+        [
+          "03 • Qual é a redução geral da pena na tentativa?",
+          "Um a dois terços da pena do crime consumado, salvo disposição em contrário. Art. 14, parágrafo único."
+        ],
+        [
+          "04 • Qual fato diferencia desistência voluntária de tentativa?",
+          "Na desistência, o agente voluntariamente interrompe execução que poderia prosseguir. Na tentativa, circunstância alheia à sua vontade impede a consumação. Arts. 14 e 15."
+        ],
+        [
+          "05 • O agente executa o que pretendia, mas consegue impedir o resultado. O que você examina?",
+          "Arrependimento eficaz. Exija que o resultado tenha sido efetivamente impedido pelo agente. Art. 15."
+        ],
+        [
+          "06 • Como fica a responsabilidade nas duas hipóteses do art. 15?",
+          "O agente responde somente pelos atos que já praticou."
+        ]
+      ]
+    },
+    {
+      "title": "Dolo, culpa e justificantes",
+      "blocks": [
+        [
+          "07 • Quais são os dois caminhos legais para reconhecer dolo?",
+          "Querer o resultado ou assumir o risco de produzi-lo. Art. 18, I."
+        ],
+        [
+          "08 • Quais são as três modalidades de culpa?",
+          "Imprudência, negligência e imperícia. Confirme a previsão de punição culposa no tipo. Art. 18, II e parágrafo único."
+        ],
+        [
+          "09 • Prever o resultado basta para concluir por dolo eventual?",
+          "Não. Procure indícios de assunção do risco. A previsão também pode existir quando o agente confia sinceramente que conseguirá evitar o resultado."
+        ],
+        [
+          "10 • Quais hipóteses o art. 23 enumera?",
+          "Estado de necessidade, legítima defesa, estrito cumprimento de dever legal e exercício regular de direito."
+        ],
+        [
+          "11 • Perigo atual ou agressão injusta iminente. Qual exame começa por cada fato?",
+          "Perigo atual: estado de necessidade, art. 24. Agressão injusta atual ou iminente: legítima defesa, art. 25. Confira os demais requisitos."
+        ],
+        [
+          "12 • O que se examina se o agente excedeu uma justificante?",
+          "Possível responsabilidade pelo excesso doloso ou culposo. Art. 23, parágrafo único."
+        ]
+      ]
+    },
+    {
+      "title": "Homicídio e lesão corporal",
+      "blocks": [
+        [
+          "13 • Qual resultado distingue homicídio consumado de sua tentativa?",
+          "A morte. O homicídio tentado exige execução dolosa iniciada e falta de morte por circunstância alheia à vontade. Arts. 14 e 121."
+        ],
+        [
+          "14 • Onde está prevista a modalidade culposa do homicídio?",
+          "No art. 121, § 3º. Procure o fato que demonstra a violação do dever de cuidado e a ligação com a morte."
+        ],
+        [
+          "15 • Onde começa a busca por qualificadoras de homicídio?",
+          "No art. 121, § 2º. Compare as circunstâncias descritas com as hipóteses legais."
+        ],
+        [
+          "16 • Qual é o resultado descrito no caput da lesão corporal?",
+          "Ofensa à integridade corporal ou à saúde de outrem. Art. 129, caput."
+        ],
+        [
+          "17 • Incapacidade para as ocupações habituais por 35 dias aparece em qual dispositivo?",
+          "Art. 129, § 1º, I. O requisito é por mais de trinta dias, sem restringir ocupações a trabalho remunerado."
+        ],
+        [
+          "18 • Que elemento sobre a morte é exigido na lesão corporal seguida de morte?",
+          "O agente não quis a morte nem assumiu o risco de produzi-la. Art. 129, § 3º."
+        ]
+      ]
+    },
+    {
+      "title": "Furto, roubo e estelionato",
+      "blocks": [
+        [
+          "19 • O que furto e roubo têm em comum quanto ao objeto?",
+          "Subtração de coisa móvel alheia, para si ou para terceiro. Arts. 155 e 157."
+        ],
+        [
+          "20 • Quais meios do roubo devem ser marcados no enunciado?",
+          "Violência a pessoa, grave ameaça ou redução à impossibilidade de resistência. Art. 157, caput."
+        ],
+        [
+          "21 • Quando a violência logo depois da subtração pode configurar roubo?",
+          "Quando visa assegurar a impunidade do crime ou a detenção da coisa para si ou para outrem. Art. 157, § 1º."
+        ],
+        [
+          "22 • Qual sequência ajuda a reconhecer estelionato consumado?",
+          "Fraude que induz ou mantém alguém em erro, com obtenção de vantagem ilícita e prejuízo alheio. Art. 171."
+        ],
+        [
+          "23 • Uma dívida não paga demonstra, por si só, estelionato?",
+          "Não. O caso precisa demonstrar meio fraudulento e sua ligação com o erro, a vantagem ilícita e o prejuízo alheio."
+        ],
+        [
+          "24 • O que buscar para conectar fraude e erro?",
+          "Identifique o artifício e a decisão que a vítima tomou ou manteve em razão da informação enganosa. Art. 171, caput."
+        ]
+      ]
+    },
+    {
+      "title": "Receptação e peculato",
+      "blocks": [
+        [
+          "25 • Qual é a origem exigida da coisa na receptação?",
+          "A coisa é produto de crime. O art. 180 exige esse vínculo com uma infração antecedente."
+        ],
+        [
+          "26 • Qual elemento subjetivo o caput descreve para quem recebe o bem?",
+          "O agente sabe que a coisa é produto de crime. Art. 180, caput."
+        ],
+        [
+          "27 • Quais sinais o § 3º manda observar na hipótese culposa?",
+          "Natureza da coisa, desproporção entre valor e preço ou condição de quem a oferece. O dispositivo trata de adquirir ou receber."
+        ],
+        [
+          "28 • Que vínculo entre posse e cargo importa no peculato do caput?",
+          "O funcionário público tem posse de bem móvel em razão do cargo e se apropria dele ou o desvia em proveito próprio ou alheio. Art. 312, caput."
+        ],
+        [
+          "29 • Sem posse prévia do bem, qual relação com o cargo pode caracterizar peculato?",
+          "O funcionário subtrai ou concorre para a subtração usando a facilidade que o cargo lhe proporciona. Art. 312, § 1º."
+        ],
+        [
+          "30 • O que precisa existir além da culpa do funcionário no peculato culposo?",
+          "A conduta culposa precisa concorrer para crime de outra pessoa. Art. 312, § 2º."
+        ]
+      ]
+    }
+  ]
+}

@@ -13,6 +13,7 @@ const source = {
   '.avif': 'image/avif',
   '.svg': 'image/svg+xml',
   '.pdf': 'application/pdf',
+  '.zip': 'application/zip',
   '.xml': 'application/xml',
 } as const
 
@@ -101,6 +102,7 @@ test('CTAs, planos, PDF e perguntas funcionam em modo demonstração', async ({ 
   await expect(page.getByRole('heading', { name: 'Garantia de 7 dias' })).toHaveCount(0)
   await expect(page.getByRole('heading', { name: 'Avaliações de estudantes' })).toHaveCount(0)
   await expect(page.getByRole('heading', { name: 'Bônus do Pacote Premium' })).toHaveCount(0)
+  await expect(page.getByRole('region', { name: 'Destrave o Código Penal por assunto' })).toHaveCount(0)
   await expect(page.getByRole('button', { name: 'Ver oferta alternativa' })).toHaveCount(0)
   await page.locator('summary').filter({ hasText: 'Posso estudar pelo celular?' }).click()
   await expect(page.getByText('Sim. Você pode abrir o PDF', { exact: false })).toBeVisible()
@@ -278,3 +280,22 @@ for (const action of ['escape', 'backdrop', 'touch', 'checkout'] as const) {
     }
   })
 }
+
+test('coleção editorial oferece os nove PDFs, o ZIP e o simulado na prévia', async ({ page }) => {
+  await serveBuild(page, 'test-results/editorial')
+  await page.goto(host)
+  const collection = page.getByRole('region', { name: 'Destrave o Código Penal por assunto' })
+  await expect(collection).toBeVisible()
+  const pdfs = collection.getByRole('link', { name: /^Baixar PDF —/ })
+  await expect(pdfs).toHaveCount(9)
+  const links = await pdfs.evaluateAll(nodes => nodes.map(node => (node as HTMLAnchorElement).href))
+  const files = await page.evaluate(async urls => Promise.all(urls.map(async url => {
+    const response = await fetch(url)
+    return response.ok && (await response.text()).startsWith('%PDF-')
+  })), links)
+  expect(files.every(Boolean)).toBe(true)
+  const pendingZip = page.waitForEvent('download')
+  await collection.getByRole('link', { name: 'Baixar os PDFs em ZIP' }).click()
+  expect((await pendingZip).suggestedFilename()).toBe('destrave-o-codigo-penal.zip')
+  await expect(collection.getByRole('link', { name: 'Abrir simulado' })).toHaveAttribute('href', '/simulado.html')
+})

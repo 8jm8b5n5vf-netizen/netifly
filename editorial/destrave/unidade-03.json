@@ -1,0 +1,36 @@
+{
+  "title": "Dolo e culpa",
+  "pages": [
+    {
+      "title": "01 • Leia a lei",
+      "blocks": [
+        ["Objetivo", "Distinguir intenção, assunção do risco e falta de cuidado, vinculando a resposta a fatos do enunciado."],
+        ["Crime doloso • art. 18, I", "O crime é doloso “quando o agente quis o resultado ou assumiu o risco de produzi-lo”. A primeira fórmula descreve o dolo direto. A segunda é a base legal do dolo eventual."],
+        ["Crime culposo • art. 18, II", "O crime é culposo “quando o agente deu causa ao resultado por imprudência, negligência ou imperícia”."],
+        ["Previsão da modalidade culposa • art. 18, parágrafo único", "A punição pela forma culposa depende de previsão expressa em lei. Identificar falta de cuidado é apenas uma etapa da análise."],
+        ["Roteiro de leitura", "Procure fatos sobre a finalidade, a reação diante do risco, o cuidado devido, o nexo com o resultado e a previsão legal da forma culposa."]
+      ]
+    },
+    {
+      "title": "02 • Aplique ao caso",
+      "blocks": [
+        ["Caso A • Querer o resultado", "Uma pessoa causa intencionalmente uma lesão que desejava produzir. A vontade de ofender a integridade corporal indica dolo direto. Confira os demais requisitos do tipo."],
+        ["Caso B • Prever e confiar que não ocorrerá", "Em atividade esportiva comum, uma pessoa prevê que a peça defeituosa pode causar lesão, confia sinceramente que ela resistirá e prossegue sem o cuidado devido. A pessoa ao lado acaba lesionada. Nos termos do exemplo, cabe examinar culpa consciente."],
+        ["Dolo eventual e culpa consciente", "Em ambos, o agente prevê o resultado. No dolo eventual, assume o risco de produzi-lo. Na culpa consciente, confia em sua não ocorrência. A classificação deve ser fundamentada nas circunstâncias, sem inferência automática a partir da gravidade do resultado."],
+        ["Três formas de falta de cuidado", "Imprudência envolve ação sem a cautela adequada. Negligência envolve deixar de adotar cuidado devido. Imperícia envolve deficiência de aptidão técnica no ato. Os rótulos não dispensam prova dos fatos."],
+        ["Resultado agravador • art. 19", "Quando um resultado agrava especialmente a pena, só responde por ele quem o tiver causado ao menos culposamente."]
+      ]
+    },
+    {
+      "title": "03 • Pratique e revise",
+      "blocks": [
+        ["Questão 1", "O agente age com a finalidade de produzir a ofensa corporal e a produz. Qual expressão do art. 18, I, se aplica?"],
+        ["Questão 2", "Dois agentes preveem o resultado. Um assume o risco de produzi-lo. O outro confia sinceramente em sua não ocorrência. Classifique cada hipótese."],
+        ["Questão 3", "Está demonstrada negligência, mas o tipo legal não prevê forma culposa. A negligência basta para punir por aquele crime?"],
+        ["Gabarito comentado", "1. “Quis o resultado”, fórmula do dolo direto.\n2. O primeiro caso indica dolo eventual. O segundo indica culpa consciente, se presentes os demais requisitos.\n3. Não. O art. 18, parágrafo único, exige previsão expressa para punir a forma culposa."],
+        ["Revisão de 1 minuto", "Complete sem consultar a página: querer o resultado, assumir o risco ou prever e confiar que o resultado não ocorrerá."],
+        ["Fonte oficial", "Código Penal, Decreto-Lei nº 2.848/1940, arts. 18 e 19. Exemplos hipotéticos para estudo."]
+      ]
+    }
+  ]
+}

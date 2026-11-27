@@ -1,0 +1,36 @@
+{
+  "title": "Estelionato",
+  "pages": [
+    {
+      "title": "01 • Leia a lei",
+      "blocks": [
+        ["Objetivo", "Reconhecer a ligação entre fraude, erro, vantagem ilícita e prejuízo no art. 171. Ao final, você deve conseguir explicar por que o engano foi decisivo para a obtenção da vantagem."],
+        ["Estelionato • art. 171, caput", "Obter, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil, ou qualquer outro meio fraudulento."],
+        ["Fraude e erro", "Induzir é fazer a pessoa acreditar em algo falso. Manter em erro é aproveitar e sustentar um engano, mediante fraude. Nos dois casos, identifique o que a pessoa acreditou e por que agiu com base nisso."],
+        ["Vantagem e prejuízo", "A vantagem deve ser ilícita e pode beneficiar o autor ou outra pessoa. Procure a perda concreta e explique como ela se relaciona com o ganho."],
+        ["Roteiro de leitura", "Sublinhe a fraude. Circule o que a pessoa enganada fez em razão dela. Identifique o que alguém obteve e quem sofreu o prejuízo."]
+      ]
+    },
+    {
+      "title": "02 • Aplique ao caso",
+      "blocks": [
+        ["Caso A • Venda inventada", "Davi anuncia um livro que sabe que não tem e que nunca pretendeu entregar. Rosa acredita na oferta, paga e não recebe o exemplar. A fraude antecede o pagamento. O erro leva Rosa a pagar e o valor recebido representa a vantagem ilícita."],
+        ["Caso B • Entrega em atraso", "Davi tem o livro, informa corretamente as condições da venda e pretende entregar. O envio atrasa por um problema na transportadora. O atraso sozinho não demonstra fraude ou intenção de obter vantagem ilícita. Pode haver questão contratual, conforme os fatos."],
+        ["O que muda entre os casos?", "Nos dois casos há pagamento e falta de entrega no prazo. No caso A, a oferta falsa levou a compradora a pagar. No caso B, o atraso ocorreu depois de uma venda apresentada de forma verdadeira."],
+        ["Fraude eletrônica • art. 171, § 2º-A", "O uso da internet em uma negociação, isoladamente, não resolve a classificação. Verifique, em especial, se a fraude utilizou informações fornecidas pela vítima ou por terceiro induzido a erro, pelos meios previstos no dispositivo."],
+        ["Compare com o furto", "Na venda inventada, a compradora paga porque acredita na oferta falsa. No exemplo de furto simples, o autor retira o bem sem que a pessoa enganada o entregue. Observe qual ação produziu a perda no caso concreto."]
+      ]
+    },
+    {
+      "title": "03 • Pratique e revise",
+      "blocks": [
+        ["Questão 1", "Uma pessoa cobra por um ingresso inexistente. O comprador acredita que o ingresso é válido e paga. Qual é a sequência de fatos que aponta para estelionato?"],
+        ["Questão 2", "A compra foi feita em uma loja real. O atendimento ofereceu reembolso após atraso no envio. O atraso prova estelionato? Explique o que seria necessário investigar."],
+        ["Questão 3", "A pessoa percebe o engano e recusa o pagamento antes que o autor obtenha a vantagem. Há estelionato consumado? Em que condição pode haver tentativa?"],
+        ["Gabarito comentado", "1. Oferta falsa, erro do comprador, pagamento, vantagem ilícita e prejuízo. A crença na validade do ingresso explica o pagamento.\n2. Não. É preciso apurar fraude e intenção, com elementos que relacionem o engano à obtenção da vantagem.\n3. Sem obtenção da vantagem, falta consumação. Pode haver tentativa se iniciada a execução e o resultado for impedido por circunstância alheia à vontade do autor."],
+        ["Revisão de 1 minuto", "Para explicar cada caso, use quatro palavras em ordem. Fraude, erro, vantagem e prejuízo."],
+        ["Fonte oficial", "Código Penal, Decreto-Lei nº 2.848/1940, arts. 14, II, 155 e 171. Recorte introdutório com exemplos hipotéticos."]
+      ]
+    }
+  ]
+}

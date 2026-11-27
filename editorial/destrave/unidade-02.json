@@ -1,0 +1,36 @@
+{
+  "title": "Consumação e tentativa",
+  "pages": [
+    {
+      "title": "01 • Leia a lei",
+      "blocks": [
+        ["Objetivo", "Localizar o início da execução e explicar por que o delito se consumou ou por que deixou de se consumar."],
+        ["Consumação • art. 14, I", "O crime é consumado “quando nele se reúnem todos os elementos de sua definição legal”. Leia o tipo penal específico antes de decidir qual fato marca a consumação."],
+        ["Tentativa • art. 14, II", "O crime é tentado “quando, iniciada a execução, não se consuma por circunstâncias alheias à vontade do agente”. Separe preparação, execução e motivo da interrupção."],
+        ["Pena da tentativa • art. 14, parágrafo único", "Salvo disposição em contrário, aplica-se a pena correspondente ao crime consumado com redução de um a dois terços."],
+        ["Roteiro de leitura", "Identifique o delito pretendido, a conduta que iniciou a execução, o elemento legal que faltou e a razão pela qual ele faltou."]
+      ]
+    },
+    {
+      "title": "02 • Aplique ao caso",
+      "blocks": [
+        ["Caso A • Interrupção externa", "No exemplo, a pessoa já havia iniciado a execução de uma subtração, mas foi contida por terceiro antes de se apoderar do bem. O impedimento é externo. A premissa aponta para tentativa de furto."],
+        ["Caso B • Interrupção voluntária", "A pessoa já iniciou a execução, poderia continuar, mas decide parar por vontade própria. Examine a desistência voluntária do art. 15. O agente só responde pelos atos já praticados que constituam infração."],
+        ["Arrependimento eficaz • art. 15", "Depois de realizar os atos executórios, o agente voluntariamente impede que o resultado se produza. Também responde apenas pelos atos já praticados que constituam infração."],
+        ["Crime impossível • art. 17", "A tentativa é impunível quando a consumação é impossível por ineficácia absoluta do meio ou por absoluta impropriedade do objeto. Um obstáculo que apenas torna a consumação difícil não satisfaz esse requisito."],
+        ["Pergunta decisiva", "Quem ou o que impediu a consumação? O próprio agente interrompeu a execução, impediu eficazmente o resultado ou foi impedido por fator externo?"]
+      ]
+    },
+    {
+      "title": "03 • Pratique e revise",
+      "blocks": [
+        ["Questão 1", "O relato descreve todos os elementos exigidos pela definição legal do crime. Qual inciso do art. 14 explica o enquadramento?"],
+        ["Questão 2", "Com a execução iniciada, a pessoa é contida por terceiro antes de reunir todos os elementos do delito. Qual fato permite cogitar tentativa?"],
+        ["Questão 3", "O agente podia prosseguir na execução, mas decide interrompê-la por vontade própria. Qual dispositivo deve ser examinado?"],
+        ["Gabarito comentado", "1. Art. 14, I. Reunidos os elementos da definição legal, há consumação.\n2. A interrupção externa após o início da execução fundamenta a tentativa do art. 14, II.\n3. Art. 15. Examine desistência voluntária e eventual responsabilidade pelos atos já praticados."],
+        ["Revisão de 1 minuto", "Enuncie de memória os três pontos da tentativa: início da execução, falta de consumação e circunstância alheia à vontade do agente."],
+        ["Fonte oficial", "Código Penal, Decreto-Lei nº 2.848/1940, arts. 14, 15 e 17. Exemplos hipotéticos para estudo."]
+      ]
+    }
+  ]
+}

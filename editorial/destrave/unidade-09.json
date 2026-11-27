@@ -1,0 +1,36 @@
+{
+  "title": "Lesão corporal",
+  "pages": [
+    {
+      "title": "01 • Leia a lei",
+      "blocks": [
+        ["Objetivo", "Classificar a lesão pelo resultado descrito e separar a intenção de lesionar da intenção ou do risco assumido de matar."],
+        ["Forma básica • art. 129, caput", "O núcleo do tipo é “ofender a integridade corporal ou a saúde de outrem”. Observe também se o caso descreve forma especial, resultado agravador ou culpa."],
+        ["Resultados do § 1º", "Incapacidade para as ocupações habituais por mais de trinta dias, perigo de vida, debilidade permanente de membro, sentido ou função, ou aceleração de parto."],
+        ["Resultados do § 2º", "Incapacidade permanente para o trabalho, enfermidade incurável, perda ou inutilização de membro, sentido ou função, deformidade permanente, ou aborto."],
+        ["Lesão seguida de morte • art. 129, § 3º", "Há resultado morte e as circunstâncias mostram que o agente não quis nem assumiu o risco desse resultado. Examine dolo em relação à lesão e ao menos culpa quanto à morte, conforme o art. 19."]
+      ]
+    },
+    {
+      "title": "02 • Aplique ao caso",
+      "blocks": [
+        ["Caso A • Ocupações habituais", "Após a ofensa, a pessoa fica impossibilitada de exercer suas ocupações habituais por 40 dias, conforme o enunciado. Examine o art. 129, § 1º, I. Ocupações habituais não se limitam ao trabalho remunerado."],
+        ["Caso B • Debilidade ou perda", "O caso descreve redução permanente da função de um membro, com função remanescente. Compare a debilidade permanente do § 1º, III com a perda ou inutilização do § 2º, III. O fato descrito aponta para debilidade."],
+        ["Tempo e natureza", "Compare “mais de trinta dias” para ocupações habituais com incapacidade “permanente” para o trabalho. São hipóteses com requisitos distintos, nos §§ 1º, I e 2º, I."],
+        ["Resultado morte", "Se o agente quis a lesão, mas causou a morte ao menos culposamente, examine o § 3º. Se quis matar ou assumiu o risco de causar a morte, examine homicídio. Use os fatos para fundamentar o elemento subjetivo."],
+        ["Lesão corporal culposa • art. 129, § 6º", "A lei também prevê forma culposa de lesão corporal. Identifique a falta de cuidado e a relação dela com a lesão."]
+      ]
+    },
+    {
+      "title": "03 • Pratique e revise",
+      "blocks": [
+        ["Questão 1", "A lesão impede as ocupações habituais da vítima por quarenta dias. Qual inciso descreve o resultado?"],
+        ["Questão 2", "O enunciado descreve perda de função causada pela ofensa. Compare esse resultado com a debilidade permanente da mesma função."],
+        ["Questão 3", "A pessoa quis lesionar. A morte decorreu de sua conduta ao menos culposamente, sem intenção nem assunção do risco de matar. Qual figura corresponde à descrição?"],
+        ["Gabarito comentado", "1. Art. 129, § 1º, I. Quarenta dias superam trinta.\n2. A perda corresponde ao § 2º, III. A debilidade permanente é prevista no § 1º, III.\n3. Lesão corporal seguida de morte, art. 129, § 3º. A morte é resultado agravador, com o requisito do art. 19."],
+        ["Revisão de 1 minuto", "Localize, sem consultar o material, onde a lei distingue incapacidade para ocupações habituais, incapacidade para o trabalho e lesão seguida de morte."],
+        ["Fonte oficial", "Código Penal, Decreto-Lei nº 2.848/1940, arts. 19, 121 e 129. Exemplos hipotéticos para estudo."]
+      ]
+    }
+  ]
+}

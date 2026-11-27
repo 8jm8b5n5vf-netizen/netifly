@@ -225,3 +225,17 @@ dialog::backdrop { background: #101828c9; }
 
 .sample-unit { margin-block-start: 20px; scroll-margin-block-start: 20px; padding: 19px; border: 1px solid #e7d9ca; border-left: 4px solid var(--burgundy); border-radius: 9px; background: #fbf3e9; }
 .sample-unit p { margin-block: 6px 12px; color: var(--ink); }
+
+.study-collection { background: #f8f2e8; }
+.study-collection .section-heading .button { margin-top: 16px; }
+.study-list { display: grid; gap: 12px; }
+.study-list li { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; padding: 17px; background: #fff; border: 1px solid #e7d9ca; border-radius: 9px; }
+.study-modules li { border-top: 3px solid var(--burgundy); }
+.study-list p, .study-simulation p { margin-top: 6px; color: var(--ink); font-size: .88rem; }
+.study-list a { margin-top: auto; }
+.study-review-heading { margin: 28px 0 12px; }
+.study-simulation { margin-top: 20px; padding: 18px; border: 1px solid #d6e6d9; background: #f4fff6; border-radius: 9px; }
+.study-simulation .button { margin-top: 11px; }
+@media (min-width: 650px) {
+  .study-modules, .study-review { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

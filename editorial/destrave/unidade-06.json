@@ -1,0 +1,36 @@
+{
+  "title": "Receptação",
+  "pages": [
+    {
+      "title": "01 • Leia a lei",
+      "blocks": [
+        ["Objetivo", "Distinguir o crime que gera a origem ilícita do bem da conduta de receptação. Ao final, você deve conseguir indicar qual fato mostra conhecimento da origem criminosa ou exige examinar a modalidade culposa."],
+        ["Receptação • art. 180, caput", "Adquirir, receber, transportar, conduzir ou ocultar, em proveito próprio ou alheio, coisa que sabe ser produto de crime, ou influir para que terceiro, de boa-fé, a adquira, receba ou oculte."],
+        ["Receptação culposa • art. 180, § 3º", "O dispositivo trata de adquirir ou receber coisa que se deve presumir obtida por meio criminoso pela sua natureza, pela desproporção entre valor e preço ou pela condição de quem a oferece."],
+        ["Crime anterior • art. 180, § 4º", "A receptação pode ser punida ainda que o autor do crime anterior seja desconhecido ou isento de pena. A origem criminosa do bem continua sendo relevante."],
+        ["Roteiro de leitura", "Identifique de qual crime veio o bem, o que a pessoa fez com ele e quais fatos mostram o que ela sabia ou devia presumir."]
+      ]
+    },
+    {
+      "title": "02 • Aplique ao caso",
+      "blocks": [
+        ["Caso A • Origem conhecida", "Rafa recebe uma bicicleta para uso próprio depois de o ofertante dizer que a havia furtado. Se os fatos forem comprovados, o recebimento de produto de crime com conhecimento da origem aponta para o art. 180, caput."],
+        ["Caso B • Circunstâncias da oferta", "Rafa compra uma bicicleta que depois se descobre furtada. Ele não foi avisado da origem, mas o preço era muito abaixo do valor do bem e as circunstâncias da oferta exigiam cautela. Examine o § 3º conforme a prova. A diferença de preço é um dado, não uma conclusão automática."],
+        ["O que muda entre os casos?", "No caso A, o enunciado informa que Rafa sabia da origem. No caso B, a análise considera se as circunstâncias da compra levavam a presumir a origem criminosa, sem presumir automaticamente que ele sabia."],
+        ["Comércio e indústria • art. 180, §§ 1º e 2º", "Se a conduta ocorreu no exercício de atividade comercial ou industrial, examine a figura qualificada e seus requisitos. A equiparação legal alcança o comércio irregular ou clandestino, inclusive em residência."],
+        ["Furto e receptação", "Quem subtraiu a bicicleta praticou a retirada do bem. Quem, em conduta separada e posterior, a recebeu sabendo do furto pode responder por receptação. Comece perguntando quem praticou qual ato."]
+      ]
+    },
+    {
+      "title": "03 • Pratique e revise",
+      "blocks": [
+        ["Questão 1", "Jo recebe uma ferramenta furtada para uso próprio, sabendo do furto. Qual fato aponta para a figura do caput, além do recebimento?"],
+        ["Questão 2", "Uma pessoa compra um objeto de origem criminosa sem ter sido avisada sobre o crime. O preço é muito inferior ao valor. Qual modalidade merece exame se a prova mostrar que ela deveria presumir essa origem?"],
+        ["Questão 3", "A origem criminosa de um bem foi comprovada, mas a polícia não identificou quem o subtraiu. Isso impede a análise da receptação?"],
+        ["Gabarito comentado", "1. Jo sabia que a ferramenta era produto de crime quando a recebeu.\n2. Receptação culposa, art. 180, § 3º. Avalie a desproporção no contexto e os demais fatos.\n3. Não. O § 4º permite a punição mesmo quando se desconhece o autor do crime anterior, se os requisitos da receptação estiverem provados."],
+        ["Revisão de 1 minuto", "Explique como você separaria a origem do bem, a ação da pessoa que o recebeu e o que ela sabia no momento da conduta."],
+        ["Fonte oficial", "Código Penal, Decreto-Lei nº 2.848/1940, art. 180, caput e §§ 1º a 4º. Recorte introdutório com exemplos hipotéticos."]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "title": "Pegadinhas de Direito Penal",
+  "pages": [
+    {
+      "title": "01 • O momento da execução",
+      "blocks": [
+        [
+          "01 • Preparação e tentativa",
+          "Um enunciado relata apenas a intenção e atos preparatórios. Para aplicar o art. 14, II, identifique qual fato marca o início de execução. Em prova, anote o primeiro ato executivo descrito antes de examinar o motivo da interrupção."
+        ],
+        [
+          "02 • Obstáculo externo e decisão voluntária",
+          "A execução não termina porque uma circunstância externa impede o agente: procure o art. 14, II. A execução não termina porque o agente, podendo prosseguir, decide voluntariamente parar: examine a desistência voluntária do art. 15 e os atos já praticados."
+        ],
+        [
+          "03 • Interromper a execução e impedir o resultado",
+          "Na desistência, a pessoa voluntariamente para a execução que ainda poderia prosseguir. No arrependimento eficaz, a pessoa voluntariamente impede que o resultado se produza. Nos dois casos, o art. 15 preserva a responsabilidade pelos atos já praticados."
+        ]
+      ]
+    },
+    {
+      "title": "02 • Dolo e ilicitude",
+      "blocks": [
+        [
+          "04 • Previsão do resultado e assunção do risco",
+          "Prever um resultado ajuda a identificar o estado subjetivo, mas o dado decisivo é a postura diante do risco. O art. 18, I, alcança quem assume o risco. Se a hipótese descreve confiança em evitar o resultado e violação do cuidado, examine culpa e previsão legal da modalidade."
+        ],
+        [
+          "05 • Perigo atual e agressão injusta",
+          "Diante de perigo atual, confira os requisitos do estado de necessidade do art. 24. Diante de agressão humana injusta, atual ou iminente, confira os requisitos da legítima defesa do art. 25. As duas hipóteses admitem proteção de direito alheio."
+        ],
+        [
+          "06 • Reação necessária e excesso",
+          "A moderação se examina ao longo da reação. Se dois atos ocorreram em momentos distintos e a agressão já havia cessado antes do segundo, separe-os. O art. 23, parágrafo único, prevê responsabilidade pelo excesso doloso ou culposo."
+        ]
+      ]
+    },
+    {
+      "title": "03 • Crimes contra a pessoa",
+      "blocks": [
+        [
+          "07 • Emoção e homicídio privilegiado",
+          "Na hipótese emocional do art. 121, § 1º, procure três dados no enunciado: domínio da violenta emoção, injusta provocação da vítima e reação logo em seguida. O reconhecimento da hipótese autoriza redução de um sexto a um terço."
+        ],
+        [
+          "08 • Ocupações habituais e trabalho",
+          "A incapacidade temporária por mais de 30 dias para ocupações habituais remete ao art. 129, § 1º, I. A incapacidade permanente para o trabalho remete ao § 2º, I. Marque a duração e o tipo de atividade que a vítima ficou impossibilitada de realizar."
+        ],
+        [
+          "09 • Resultado morte e intenção",
+          "A morte da vítima é um fato comum a hipóteses distintas. Leia o que o enunciado diz sobre intenção quanto à lesão e quanto à morte. O art. 129, § 3º, exige que o agente não tenha querido a morte nem assumido o risco de produzi-la."
+        ]
+      ]
+    },
+    {
+      "title": "04 • Subtração, objeto e ameaça",
+      "blocks": [
+        [
+          "10 • Força sobre objeto e violência à pessoa",
+          "Romper obstáculo à subtração aponta para a leitura do art. 155, § 4º, I. Violência contra pessoa para subtrair aponta para a leitura do art. 157. Antes de escolher, circule no enunciado quem ou o que sofreu a ação."
+        ],
+        [
+          "11 • Ameaça antes e ameaça depois",
+          "A ameaça usada para conseguir a subtração entra na análise do art. 157, caput. Logo após a retirada do bem, examine o § 1º e identifique a finalidade descrita em lei: assegurar impunidade ou detenção da coisa."
+        ],
+        [
+          "12 • Subtração de celular e faixa aplicável",
+          "O objeto indicado muda quais dispositivos precisam ser consultados. No furto, confira o art. 155, § 6º, II. No roubo, confira o aumento do art. 157, § 2º, IX. As duas regras foram incluídas pela Lei nº 15.397/2026."
+        ]
+      ]
+    },
+    {
+      "title": "05 • Fraude, receptação e cargo",
+      "blocks": [
+        [
+          "13 • Fraude para entrega e fraude para subtração",
+          "No estelionato, o erro causado pela fraude leva a vítima à entrega ou disposição patrimonial, com vantagem ilícita e prejuízo. No furto mediante fraude, a fraude facilita a subtração pelo agente. Identifique quem realizou o ato que retirou o bem da esfera da vítima."
+        ],
+        [
+          "14 • Saber a origem e dever presumir a origem",
+          "O art. 180, caput, usa o conhecimento da origem criminosa. O § 3º descreve aquisição ou recebimento quando natureza da coisa, desproporção entre preço e valor ou condição de quem a oferece exigia presumir a origem criminosa. Leia o que o caso efetivamente comprova."
+        ],
+        [
+          "15 • Posse pelo cargo e facilidade pelo cargo",
+          "No art. 312, caput, a posse em razão do cargo antecede apropriação ou desvio. No § 1º, o funcionário não tem a posse e se vale da facilidade funcional para subtrair ou concorrer para a subtração. Identifique essa diferença mesmo quando as duas hipóteses têm a mesma faixa de pena."
+        ]
+      ]
+    }
+  ]
+}

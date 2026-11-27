@@ -3,6 +3,7 @@ import { dirname, resolve } from 'node:path'
 import { createServer, defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { readConfig } from './src/config/site.ts'
+import collection from './editorial/destrave/colecao.json' with { type: 'json' }
 
 const securityHeaders = [
   'X-Content-Type-Options: nosniff',
@@ -54,6 +55,9 @@ export default defineConfig(({ mode }) => {
   const config = readConfig({ ...loadEnv(mode, process.cwd(), 'VITE_'), ...process.env })
   const canonical = config.live && config.url ? config.url : undefined
   return {
+    build: config.editorialReview ? {
+      rolldownOptions: { input: { index: resolve('index.html'), simulado: resolve('simulado.html') } },
+    } : undefined,
     plugins: [
       react(),
       staticPage(mode),
@@ -65,7 +69,7 @@ export default defineConfig(({ mode }) => {
             .replace('<!-- deployment-meta -->', '<link rel="canonical" href="' + htmlAttribute(canonical) + '"><meta property="og:url" content="' + htmlAttribute(canonical) + '">')
             .replaceAll('content="/assets/branding/social.webp"', 'content="' + htmlAttribute(new URL('/assets/branding/social.webp', canonical).href) + '"')
         },
-        generateBundle() {
+        async generateBundle() {
           const sitemap = canonical && new URL('/sitemap.xml', canonical).href
           this.emitFile({
             type: 'asset', fileName: 'robots.txt',
@@ -82,6 +86,15 @@ export default defineConfig(({ mode }) => {
             source: ['/*', ...headers.map(header => '  ' + header),
               '/assets/*', '  Cache-Control: public, max-age=3600, stale-while-revalidate=86400', ''].join('\n'),
           })
+          if (config.editorialReview) {
+            const names = [...collection.modulos, ...collection.bonus].map(item => item.id + '.pdf')
+            names.push('destrave-o-codigo-penal.zip')
+            const files = await Promise.all(names.map(async name => ({
+              type: 'asset' as const, fileName: 'colecao/' + name,
+              source: await readFile(resolve('editorial/destrave/exportados', name)),
+            })))
+            for (const file of files) this.emitFile(file)
+          }
         },
       },
     ],

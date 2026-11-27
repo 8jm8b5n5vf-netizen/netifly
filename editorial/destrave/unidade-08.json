@@ -1,0 +1,36 @@
+{
+  "title": "Homicídio",
+  "pages": [
+    {
+      "title": "01 • Leia a lei",
+      "blocks": [
+        ["Objetivo", "Usar o art. 121 para distinguir homicídio simples, hipótese de redução de pena, qualificadora e modalidade culposa."],
+        ["Homicídio simples • art. 121, caput", "O núcleo do tipo é “matar alguém”. Na forma consumada, examine o resultado morte, o nexo com a conduta e o elemento subjetivo."],
+        ["Hipóteses de redução • art. 121, § 1º", "O juiz pode reduzir a pena de um sexto a um terço se o agente atua impelido por motivo de relevante valor social ou moral, ou sob domínio de violenta emoção, logo em seguida à injusta provocação da vítima."],
+        ["Qualificadoras • art. 121, § 2º", "A lei prevê circunstâncias específicas que qualificam o homicídio, como a motivação torpe no inciso I ou a finalidade de assegurar a impunidade de outro crime no inciso V. Consulte o inciso aplicável ao fato."],
+        ["Modalidade culposa • art. 121, § 3º", "Quando a morte é causada por falta de cuidado, sem dolo de matar, examine a figura culposa e o vínculo entre a violação do cuidado e o resultado."]
+      ]
+    },
+    {
+      "title": "02 • Aplique ao caso",
+      "blocks": [
+        ["Caso A • Resultado querido", "O enunciado estabelece que a pessoa queria causar a morte, que sua conduta causou esse resultado e que não há circunstância especial descrita. O ponto de partida é o art. 121, caput."],
+        ["Caso B • Morte por falta de cuidado", "Em uma atividade de manutenção fora do trânsito, uma pessoa deixa de observar um dever de cuidado e causa a morte de outra. O enunciado exclui a intenção e a assunção do risco. Examine o art. 121, § 3º."],
+        ["Variável que muda a resposta", "A morte aparece nos dois casos. Procure as circunstâncias que sustentam dolo ou culpa em vez de concluir pelo resultado isolado."],
+        ["Domínio de violenta emoção", "Na hipótese do § 1º, identifique o domínio da emoção, a injusta provocação da vítima e a proximidade temporal expressa em “logo em seguida”. A simples referência a uma discussão não resolve a questão."],
+        ["Feminicídio • art. 121-A", "O feminicídio passou a constar de tipo autônomo no art. 121-A pela Lei nº 14.994/2024. Consulte o artigo quando o enunciado descrever morte de mulher por razões da condição do sexo feminino."]
+      ]
+    },
+    {
+      "title": "03 • Pratique e revise",
+      "blocks": [
+        ["Questão 1", "Há morte intencional e nexo com a conduta, sem circunstância especial descrita. Qual dispositivo é o ponto de partida?"],
+        ["Questão 2", "O enunciado diz que a morte foi causada por negligência e que o agente não quis nem assumiu o risco do resultado. Qual modalidade deve ser examinada?"],
+        ["Questão 3", "O agente mata para assegurar a impunidade de outro crime. Em qual inciso há previsão específica para essa finalidade?"],
+        ["Gabarito comentado", "1. Art. 121, caput. A descrição aponta para homicídio simples.\n2. Art. 121, § 3º. O relato aponta para homicídio culposo, desde que satisfeitos os requisitos.\n3. Art. 121, § 2º, V. A finalidade narrada é uma das hipóteses do inciso."],
+        ["Revisão de 1 minuto", "Organize a resposta em três etapas: morte e nexo, dolo ou culpa, circunstância especial descrita na lei."],
+        ["Fonte oficial", "Código Penal, Decreto-Lei nº 2.848/1940, arts. 121 e 121-A. Exemplos hipotéticos para estudo."]
+      ]
+    }
+  ]
+}

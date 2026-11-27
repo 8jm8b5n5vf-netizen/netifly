@@ -1,0 +1,74 @@
+{
+  "title": "Mapas de revisão",
+  "pages": [
+    {
+      "title": "Execução do crime",
+      "blocks": [
+        [
+          "Como revisar",
+          "Percorra as setas em voz alta. Escolha um caminho e justifique a resposta com o fato decisivo, depois confira o artigo indicado."
+        ],
+        [
+          "Mapa 1 • Consumação e tentativa | art. 14",
+          "O tipo exige quais elementos?\n→ Todos ocorreram: examine a consumação.\n→ Falta algum: verifique se a execução começou.\n→ A execução começou e um fator alheio à vontade impediu a consumação: examine a tentativa.\nTeste: sublinhe o primeiro ato de execução e circule o fator que impediu a consumação. Se houver apenas preparação, o art. 14, II, ainda não descreve tentativa daquele crime."
+        ],
+        [
+          "Mapa 2 • Desistência e arrependimento eficaz | art. 15",
+          "A execução começou e ainda podia prosseguir?\n→ O agente voluntariamente deixou de continuar: examine desistência voluntária.\n→ A execução estava esgotada, mas o agente impediu o resultado: examine arrependimento eficaz.\n→ Um fator alheio à vontade impediu a consumação: examine o art. 14, II.\nConsequência: nas duas hipóteses do art. 15, o agente responde pelos atos já praticados."
+        ]
+      ]
+    },
+    {
+      "title": "Elemento subjetivo e ilicitude",
+      "blocks": [
+        [
+          "Mapa 3 • Dolo e culpa | art. 18",
+          "Qual a relação do agente com o resultado?\n→ Quis o resultado: dolo direto.\n→ Assumiu o risco de produzi-lo: examine dolo eventual.\n→ Deu causa por imprudência, negligência ou imperícia: examine culpa e confirme se existe previsão legal expressa.\nTeste: quando o agente previu o resultado, procure fatos que indiquem se assumiu o risco ou confiava que poderia evitá-lo. A previsão isolada é insuficiente."
+        ],
+        [
+          "Mapa 4 • Exclusão de ilicitude | arts. 23–25",
+          "Qual situação o enunciado descreve?\n→ Perigo atual: verifique a origem do perigo, possibilidade de evitá-lo, razoabilidade do sacrifício e dever legal de enfrentamento (art. 24).\n→ Agressão injusta atual ou iminente: verifique o direito próprio ou alheio e o uso moderado de meios necessários (art. 25).\n→ Ato funcional ou exercício de direito: examine o art. 23, III.\nEm qualquer hipótese, reveja se houve excesso doloso ou culposo."
+        ]
+      ]
+    },
+    {
+      "title": "Crimes contra a pessoa",
+      "blocks": [
+        [
+          "Mapa 5 • Homicídio | art. 121",
+          "Houve morte ligada à conduta?\n→ Sim: examine dolo ou culpa. Se houver dolo, procure circunstâncias de privilégio ou qualificadoras. Se houver culpa, consulte o § 3º.\n→ Não: se houve início de execução com dolo de matar e interrupção alheia à vontade, retome o art. 14, II.\nTeste: aponte o elemento subjetivo e o resultado em sua justificativa."
+        ],
+        [
+          "Mapa 6 • Lesão corporal | art. 129",
+          "A conduta ofendeu a integridade corporal ou a saúde de outra pessoa?\n→ Identifique o resultado descrito e examine o caput.\n→ Perigo de vida ou incapacidade para as ocupações habituais por mais de trinta dias: confira o § 1º.\n→ Perda ou inutilização de membro, sentido ou função: confira o § 2º.\n→ Morte: examine o § 3º se o agente não quis a morte nem assumiu o risco de produzi-la."
+        ]
+      ]
+    },
+    {
+      "title": "Subtração e fraude patrimonial",
+      "blocks": [
+        [
+          "Mapa 7 • Furto e roubo | arts. 155 e 157",
+          "Houve subtração de coisa móvel alheia? Identifique o meio.\n→ Sem os meios típicos do art. 157: examine furto.\n→ Violência à pessoa, grave ameaça ou redução da capacidade de resistência para subtrair: examine o caput do roubo.\n→ Violência ou grave ameaça logo depois da retirada: teste se visou à impunidade ou à detenção da coisa (§ 1º).\nCompare a cronologia com a finalidade para justificar sua resposta."
+        ],
+        [
+          "Mapa 8 • Estelionato | art. 171",
+          "O que levou à obtenção da vantagem?\n→ Identifique o artifício, o ardil ou outro meio fraudulento.\n→ Verifique se alguém foi induzido ou mantido em erro.\n→ Confira a obtenção de vantagem ilícita em prejuízo de alguém.\nTeste: destaque a informação falsa, a decisão tomada em erro e o prejuízo. Um inadimplemento, isoladamente, é insuficiente para demonstrar fraude penal."
+        ]
+      ]
+    },
+    {
+      "title": "Origem do bem e função pública",
+      "blocks": [
+        [
+          "Mapa 9 • Receptação | art. 180",
+          "O objeto é produto de crime? Identifique a relação do agente com a coisa.\n→ Aquisição, recebimento, transporte, condução ou ocultação em proveito próprio ou alheio: examine o conhecimento da origem criminosa para o caput.\n→ Influência sobre terceiro de boa-fé: confira os verbos da segunda parte do caput.\n→ Conhecimento não demonstrado: examine separadamente a hipótese culposa do § 3º, com as condutas e os sinais descritos em lei."
+        ],
+        [
+          "Mapa 10 • Peculato | art. 312",
+          "O enunciado envolve funcionário público e bem móvel? Identifique o vínculo com o cargo.\n→ Posse em razão do cargo: verifique apropriação ou desvio em proveito próprio ou alheio (caput).\n→ Sem posse prévia: examine se houve subtração, ou contribuição para ela, usando facilidade do cargo (§ 1º).\n→ Conduta culposa: verifique se concorreu para crime de outra pessoa (§ 2º)."
+        ]
+      ]
+    }
+  ]
+}

@@ -83,3 +83,11 @@ Para regenerar o PDF anterior, instale `editorial/requirements.txt` em um ambien
 | Biblioteca Meta, buscas por “361 artigos” e “Marcelo Mapas” | Resposta HTTP 403. A captura e os PDFs anexados serviram de referência alternativa. |
 
 Consulte `RELATORIO-QA.md` para os resultados executados e os limites da validação.
+
+## Coleção Destrave o Código Penal
+
+A edição para revisão reúne nove unidades em três módulos, seis materiais de revisão em PDF e um simulado interativo no navegador. Os textos e o catálogo estão em `editorial/destrave/`, e os PDFs e o ZIP da prévia ficam em `editorial/destrave/exportados/`.
+
+Para regenerar os arquivos, instale ReportLab e as fontes DejaVu Sans e execute `python editorial/destrave/gerar-colecao.py`. Use `CP360_FONT_DIR` para apontar para outro diretório de fontes. As capas, a edição e a fonte legal aparecem nos PDFs. O guia cobre os dispositivos selecionados nas unidades.
+
+Use `VITE_COMMERCIAL_APPROVED=false VITE_EDITORIAL_REVIEW=true npm run build` para gerar a prévia editorial em `dist/`. Ela disponibiliza `#colecao`, os downloads em `/colecao/` e o simulado em `/simulado.html`. O build padrão não publica a coleção completa nem o simulado. O progresso do simulado fica no armazenamento local do navegador, sem servidor ou banco de dados.
