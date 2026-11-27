@@ -13,8 +13,8 @@ export function Hero() {
   const image = bundle ? images.hero : images.guide
   return <section className="hero" aria-labelledby="hero-heading">
     <div className="wrap hero-grid">
-      <h1 id="hero-heading">Entenda o Código Penal de forma <em>simples e visual</em></h1>
-      <p className="hero-intro">Estude os artigos com explicações em linguagem simples, exemplos e esquemas que ajudam a comparar conceitos e revisar a matéria.</p>
+      <h1 id="hero-heading"><em>Destrave</em> o Código Penal</h1>
+      <p className="hero-intro">Leia o artigo, entenda o exemplo e pratique a distinção entre conceitos como furto e roubo.</p>
       <img className="hero-art" src={asset(image + '-720')} srcSet={asset(image + '-720') + ' 720w, ' + asset(image) + ' 1440w'}
         sizes="(min-width: 720px) 390px, (min-width: 485px) 445px, calc(100vw - 40px)" width="720" height="720" fetchPriority="high"
         alt={bundle ? 'Guia Código Penal 360, amostras dos artigos e os sete materiais do kit' : 'Capa bordô do guia Código Penal 360 com três páginas ilustradas ao fundo'} />

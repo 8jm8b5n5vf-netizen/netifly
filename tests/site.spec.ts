@@ -41,7 +41,7 @@ for (const width of widths) {
     page.on('console', event => { if (event.type() === 'error') errors.push(event.text()) })
     await serveBuild(page)
     await page.goto(host)
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Entenda o Código Penal de forma simples e visual')
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Destrave o Código Penal')
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width)
     const heroArt = (await page.locator('.hero-art').boundingBox())!
     const heroHeading = (await page.getByRole('heading', { level: 1 }).boundingBox())!
@@ -77,7 +77,7 @@ test('conteúdo e navegação básica disponíveis no HTML estático', async ({ 
     const page = await context.newPage()
     await serveBuild(page)
     await page.goto(host)
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Entenda o Código Penal de forma simples e visual')
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Destrave o Código Penal')
     await page.getByRole('link', { name: 'QUERO VER AS OFERTAS' }).click()
     await expect(page).toHaveURL(/#ofertas$/)
     await expect(page.getByRole('heading', { name: 'Pacote Premium' })).toBeVisible()
@@ -108,6 +108,9 @@ test('CTAs, planos, PDF e perguntas funcionam em modo demonstração', async ({ 
   await page.getByRole('link', { name: 'Baixar PDF complementar' }).click()
   const pdf = await downloading
   expect(pdf.suggestedFilename()).toBe('codigo-penal-360-amostras.pdf')
+  const unitDownload = page.waitForEvent('download')
+  await page.getByRole('link', { name: 'Baixar unidade-modelo' }).click()
+  expect((await unitDownload).suggestedFilename()).toBe('destrave-furto-e-roubo.pdf')
   await page.getByRole('link', { name: 'Orientação de acesso' }).click()
   await expect(page.getByRole('heading', { name: 'Orientação de acesso', exact: true })).toBeVisible()
 })

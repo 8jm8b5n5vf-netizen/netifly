@@ -82,6 +82,11 @@ export function Samples() {
           <button className="icon-button" aria-label="Próximas amostras" disabled={page >= anchors.length - 1} onClick={() => go(page + 1)}><ArrowRight size={19} /></button>
         </div>
       </div>
+      <article className="sample-unit" id="unidade-modelo">
+        <h3>Unidade-modelo · Furto e roubo</h3>
+        <p>Compare dois casos, resolva três questões e confira o gabarito comentado. PDF gratuito em A4.</p>
+        <a className="button button-outline" href="/previews/destrave-furto-e-roubo.pdf" download><ArrowDownToLine size={17} aria-hidden="true" /> Baixar unidade-modelo</a>
+      </article>
       <div className="sample-note">
         <p>Amostras editoriais em revisão.</p>
         <a className="text-link" href={demoPdf} download><ArrowDownToLine size={17} aria-hidden="true" /> Baixar PDF complementar</a>

@@ -222,3 +222,6 @@ dialog::backdrop { background: #101828c9; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+.sample-unit { margin-block-start: 20px; scroll-margin-block-start: 20px; padding: 19px; border: 1px solid #e7d9ca; border-left: 4px solid var(--burgundy); border-radius: 9px; background: #fbf3e9; }
+.sample-unit p { margin-block: 6px 12px; color: var(--ink); }

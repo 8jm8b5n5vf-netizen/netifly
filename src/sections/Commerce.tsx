@@ -108,7 +108,7 @@ export function Offers({ consent }: { consent: string | null | undefined }) {
       <div className="section-heading">
         <h2 id="offers-heading">Escolha como quer estudar Direito Penal</h2>
         <p>Leia o artigo, veja um exemplo concreto e compare conceitos que costumam gerar dúvida.</p>
-        <a className="offer-sample-link" href="#amostras">Veja furto e roubo nas amostras gratuitas <ArrowRight size={17} aria-hidden="true" /></a>
+        <a className="offer-sample-link" href="#unidade-modelo">Experimente a unidade de furto e roubo <ArrowRight size={17} aria-hidden="true" /></a>
         {site.live && site.terms.payment && <p>Pagamento único.</p>}
         {!site.live && <p>Prévia das ofertas. As compras estão desativadas.</p>}
       </div>
